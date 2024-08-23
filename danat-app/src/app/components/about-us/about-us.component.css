@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #0056b3;
+  --primary-color: #C03124;
   --secondary-color: #007bff;
   --background-color: #f9f9f9;
   --text-color: #333;
@@ -20,22 +20,24 @@
 }
 
 .about-us-container h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
   color: var(--primary-color);
   text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
 }
 
 .about-us-container h3 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 10px;
   color: var(--secondary-color);
   text-align: center;
 }
 
 .about-us-container p {
-  font-size: 1em;
-  line-height: 1.6;
+  font-size: 1.2em;
+  line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
 }
@@ -45,6 +47,7 @@
   padding: 20px;
   background-color: var(--background-color);
   border-radius: var(--border-radius);
+  border-left: 5px solid var(--primary-color);
 }
 
 .mission-vision .mission, .mission-vision .vision {
@@ -53,6 +56,7 @@
   background-color: #fff;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--primary-color);
 }
 
 .team-grid, .partners-grid {
@@ -70,6 +74,7 @@
   background-color: #fff;
   border-radius: var(--border-radius);
   transition: var(--transition);
+  border-top: 5px solid var(--primary-color);
 }
 
 .team-member:hover, .partner:hover {
@@ -123,6 +128,6 @@
   }
 
   .about-us-container p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
