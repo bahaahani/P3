@@ -4,15 +4,15 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #0056b3;
+  --primary-color: #c21130;
+  --secondary-color: #b24110;
   --background-color: #f8f9fa;
   --text-color: #333;
   --base-font-size: 16px;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: var(--base-font-size);
   line-height: 1.6;
   color: var(--text-color);
@@ -23,24 +23,29 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply mb-5 leading-tight;
 }
 
 a {
-  @apply text-blue-600 no-underline transition duration-300;
+  @apply text-red-600 no-underline transition duration-300;
 }
 
 a:hover {
-  @apply text-blue-800;
+  @apply text-red-800;
 }
 
 .button {
-  @apply inline-block bg-blue-600 text-white py-2 px-4 rounded transition duration-300 ease-in-out;
+  @apply inline-block bg-red-600 text-white py-2 px-4 rounded transition duration-300 ease-in-out;
 }
 
 .button:hover {
-  @apply bg-blue-800 transform -translate-y-0.5;
+  @apply bg-red-800 transform -translate-y-0.5;
 }
 
 /* High contrast mode */
@@ -64,7 +69,7 @@ a:hover {
 
 /* Dyslexic-friendly font */
 .dyslexic-font {
-  font-family: 'OpenDyslexic', 'Arial', sans-serif;
+  font-family: "OpenDyslexic", "Arial", sans-serif;
 }
 
 /* Responsive design */

@@ -32,7 +32,8 @@
   transition: background-color 0.3s;
 }
 
-.menu-items a:hover, .menu-items a.active {
+.menu-items a:hover,
+.menu-items a.active {
   background-color: var(--secondary-color);
 }
 
@@ -81,17 +82,3 @@
     margin: 0.5rem 0;
   }
 
-  .submenu {
-    position: static;
-    display: none;
-    background-color: var(--secondary-color);
-  }
-
-  .menu-items li:hover .submenu {
-    display: flex;
-  }
-
-  .menu-controls {
-    margin-top: 1rem;
-  }
-}

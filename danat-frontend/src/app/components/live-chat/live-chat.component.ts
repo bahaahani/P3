@@ -15,8 +15,13 @@ interface ChatMessage {
   styleUrls: ['./live-chat.component.css']
 })
 export class LiveChatComponent {
+  isChatOpen: boolean = false;
   messages: ChatMessage[] = [];
   newMessage = '';
+
+  toggleChat() {
+    this.isChatOpen = !this.isChatOpen;
+  }
 
   sendMessage() {
     if (this.newMessage.trim()) {

@@ -1,42 +1,42 @@
 <div class="programs-container">
-  <h1>Educational Programs at DANAT</h1>
-  <p class="intro">Discover our wide range of educational programs designed to nurture expertise in gemology, pearl science, and jewelry design. Whether you're a beginner or a seasoned professional, our courses offer valuable insights and hands-on experience.</p>
+  <h1 class="text-4xl font-bold mb-4">Educational Programs at DANAT</h1>
+  <p class="text-lg mb-8">Discover our wide range of educational programs designed to nurture expertise in gemology, pearl science, and jewelry design. Whether you're a beginner or a seasoned professional, our courses offer valuable insights and hands-on experience.</p>
 
-  <div class="programs-grid">
-    <div *ngFor="let program of programs" class="program-card">
-      <h2>{{ program.title }}</h2>
-      <p>{{ program.description }}</p>
-      <h3>Available Courses:</h3>
-      <ul>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div *ngFor="let program of programs" class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-2">{{ program.title }}</h2>
+      <p class="text-lg mb-4">{{ program.description }}</p>
+      <h3 class="text-lg font-bold mb-2">Available Courses:</h3>
+      <ul class="list-disc ml-6 mb-4">
         <li *ngFor="let course of program.courses">
           <strong>{{ course.name }}</strong> - {{ course.duration }}
         </li>
       </ul>
-      <a [routerLink]="['/registration']" [queryParams]="{program: program.title}" class="cta-button">Enroll Now</a>
+      <a [routerLink]="['/registration']" [queryParams]="{program: program.title}" class="inline-block bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors">Enroll Now</a>
     </div>
   </div>
 
-  <section class="why-study">
-    <h2>Why Study at DANAT?</h2>
-    <ul>
-      <li>World-class facilities and equipment</li>
-      <li>Expert instructors with industry experience</li>
-      <li>Hands-on practical training</li>
-      <li>Internationally recognized certifications</li>
-      <li>Career support and industry connections</li>
+  <section class="why-study mt-12">
+    <h2 class="text-3xl font-bold mb-4">Why Study at DANAT?</h2>
+    <ul class="list-disc ml-6">
+      <li class="text-lg mb-2">World-class facilities and equipment</li>
+      <li class="text-lg mb-2">Expert instructors with industry experience</li>
+      <li class="text-lg mb-2">Hands-on practical training</li>
+      <li class="text-lg mb-2">Internationally recognized certifications</li>
+      <li class="text-lg mb-2">Career support and industry connections</li>
     </ul>
   </section>
 
-  <section class="application-process">
-    <h2>Application Process</h2>
-    <ol>
-      <li>Choose your desired program</li>
-      <li>Complete the online application form</li>
-      <li>Submit required documents</li>
-      <li>Attend an interview (if required)</li>
-      <li>Receive admission decision</li>
-      <li>Pay tuition fees and enroll</li>
+  <section class="application-process mt-12">
+    <h2 class="text-3xl font-bold mb-4">Application Process</h2>
+    <ol class="list-decimal ml-6">
+      <li class="text-lg mb-2">Choose your desired program</li>
+      <li class="text-lg mb-2">Complete the online application form</li>
+      <li class="text-lg mb-2">Submit required documents</li>
+      <li class="text-lg mb-2">Attend an interview (if required)</li>
+      <li class="text-lg mb-2">Receive admission decision</li>
+      <li class="text-lg mb-2">Pay tuition fees and enroll</li>
     </ol>
-    <a routerLink="/contact" class="cta-button">Contact Admissions</a>
+    <a routerLink="/contact" class="inline-block bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors mt-4">Contact Admissions</a>
   </section>
 </div>

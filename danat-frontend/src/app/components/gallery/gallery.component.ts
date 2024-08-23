@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoadingService } from '../../services/loading.service';
 
 interface GalleryItem {
   id: number;
@@ -16,7 +17,7 @@ interface GalleryItem {
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   galleryItems: GalleryItem[] = [
     {
       id: 1,
@@ -44,6 +45,18 @@ export class GalleryComponent {
 
   categories = ['all', 'gemstone', 'pearl', 'jewelry'];
   selectedCategory: string = 'all';
+  isLoading = true;
+
+  constructor(private loadingService: LoadingService) {}
+
+  ngOnInit() {
+    this.loadingService.setLoading(true);
+    // Simulate loading time
+    setTimeout(() => {
+      this.isLoading = false;
+      this.loadingService.setLoading(false);
+    }, 1000);
+  }
 
   filterGallery(category: string) {
     this.selectedCategory = category;
@@ -53,5 +66,11 @@ export class GalleryComponent {
     return this.selectedCategory === 'all'
       ? this.galleryItems
       : this.galleryItems.filter(item => item.category === this.selectedCategory);
+  }
+
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.src = 'assets/images/placeholder.jpg'; // Replace with a placeholder image
+    img.alt = 'Image not available';
   }
 }

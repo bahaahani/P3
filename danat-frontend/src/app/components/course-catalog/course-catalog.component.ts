@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './course-catalog.component.html',
   styleUrls: ['./course-catalog.component.css']
 })
-export class CourseCatalogComponent {
+export class CourseCatalogComponent implements OnInit {
   searchTerm: string = '';
   courses = [
     { name: 'Introduction to Gemology', category: 'gemology' },

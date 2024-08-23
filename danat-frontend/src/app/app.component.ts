@@ -5,12 +5,12 @@ import { MegaMenuComponent } from './components/mega-menu/mega-menu.component';
 import { LiveChatComponent } from './components/live-chat/live-chat.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { AccessibilityControlsComponent } from './components/accessibility-controls/accessibility-controls.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { AppSettingsService } from './services/app-settings.service';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { LoadingService } from './services/loading.service';
 import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +22,8 @@ import { take } from 'rxjs/operators';
     LiveChatComponent,
     LanguageSelectorComponent,
     AccessibilityControlsComponent,
-    FooterComponent,
-    LoadingIndicatorComponent
+    LoadingIndicatorComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

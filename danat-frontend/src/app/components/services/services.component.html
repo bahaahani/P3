@@ -1,22 +1,35 @@
 <div class="services-container">
-  <h1>Our Services</h1>
-  <p class="intro">DANAT offers a wide range of professional services in gemology, pearl testing, and jewelry appraisal. Our team of experts uses cutting-edge technology to provide accurate and reliable results.</p>
+  <h1 class="text-4xl font-bold mb-4">Our Services</h1>
+  <p class="text-lg text-gray-600 mb-8">
+    DANAT offers a wide range of professional services in gemology, pearl
+    testing, and jewelry appraisal. Our team of experts uses cutting-edge
+    technology to provide accurate and reliable results.
+  </p>
 
-  <div class="services-grid">
-    <div *ngFor="let service of services" class="service-card">
-      <h2>{{ service.name }}</h2>
-      <p>{{ service.description }}</p>
-      <h3>Key Features:</h3>
-      <ul>
-        <li *ngFor="let feature of service.features">{{ feature }}</li>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      *ngFor="let service of services"
+      class="bg-white rounded-lg shadow-md p-6"
+    >
+      <h2 class="text-2xl font-bold mb-2">{{ service.name }}</h2>
+      <p class="text-gray-600 mb-4">{{ service.description }}</p>
+      <h3 class="text-lg font-semibold mb-2">Key Features:</h3>
+      <ul class="list-disc list-inside">
+        <li *ngFor="let feature of service.features" class="mb-2">
+          {{ feature }}
+        </li>
       </ul>
-      <a href="#" class="cta-button">Learn More</a>
+      <a
+        href="#"
+        class="inline-block mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >Learn More</a
+      >
     </div>
   </div>
 
-  <section class="why-choose-us">
-    <h2>Why Choose DANAT?</h2>
-    <ul>
+  <section class="my-12">
+    <h2 class="text-3xl font-bold mb-4">Why Choose DANAT?</h2>
+    <ul class="list-disc list-inside">
       <li>Internationally recognized expertise</li>
       <li>State-of-the-art technology and facilities</li>
       <li>Commitment to accuracy and integrity</li>
@@ -25,11 +38,18 @@
     </ul>
   </section>
 
-  <section class="contact-info">
-    <h2>Get in Touch</h2>
-    <p>To learn more about our services or to schedule an appointment, please contact us:</p>
-    <p>Email: infodanat.bh</p>
-    <p>Phone: +973 1711 0000</p>
-    <a href="/contact" class="cta-button">Contact Us</a>
+  <section class="my-12">
+    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+    <p class="mb-4">
+      To learn more about our services or to schedule an appointment, please
+      contact us:
+    </p>
+    <p class="mb-2">Email: infodanat.bh</p>
+    <p class="mb-4">Phone: +973 1711 0000</p>
+    <a
+      href="/contact"
+      class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600"
+      >Contact Us</a
+    >
   </section>
 </div>

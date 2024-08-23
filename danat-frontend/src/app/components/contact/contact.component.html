@@ -1,32 +1,32 @@
 <div class="contact-container">
-  <h1>Contact Us</h1>
+  <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
   <div class="contact-content">
     <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>We'd love to hear from you. Please feel free to contact us with any questions or inquiries.</p>
-      <ul>
+      <h2 class="text-2xl font-bold mb-2">Get in Touch</h2>
+      <p class="mb-4">We'd love to hear from you. Please feel free to contact us with any questions or inquiries.</p>
+      <ul class="mb-4">
         <li><strong>Address:</strong> DANAT Institute, Manama, Bahrain</li>
         <li><strong>Phone:</strong> +973 1711 0000</li>
         <li><strong>Email:</strong> infodanat.bh</li>
       </ul>
-      <h3>Office Hours</h3>
-      <p>Sunday - Thursday: 8:00 AM - 4:00 PM</p>
+      <h3 class="text-xl font-bold mb-2">Office Hours</h3>
+      <p class="mb-2">Sunday - Thursday: 8:00 AM - 4:00 PM</p>
       <p>Friday - Saturday: Closed</p>
     </div>
     <div class="contact-form">
-      <h2>Send Us a Message</h2>
+      <h2 class="text-2xl font-bold mb-4">Send Us a Message</h2>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
         <div>
           <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-          <input type="text" id="name" formControlName="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+          <input type="text" id="name" formControlName="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-200 focus:border-indigo-300 focus:ring-opacity-50">
         </div>
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="email" formControlName="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+          <input type="email" id="email" formControlName="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-200 focus:border-indigo-300 focus:ring-opacity-50">
         </div>
         <div>
           <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-          <textarea id="message" formControlName="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+          <textarea id="message" formControlName="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-200 focus:border-indigo-300 focus:ring-opacity-50"></textarea>
         </div>
         <button type="submit" [disabled]="!contactForm.valid" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Send Message

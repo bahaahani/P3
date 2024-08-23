@@ -16,10 +16,15 @@ export class AccessibilityControlsComponent {
     this.fontSize += 2;
     document.body.style.fontSize = `${this.fontSize}px`;
   }
-
   decreaseFontSize() {
     this.fontSize -= 2;
     document.body.style.fontSize = `${this.fontSize}px`;
+  }
+
+  constructor(private appSettings: AppSettingsService) { }
+
+  changeFontSize(direction: 'increase' | 'decrease') {
+    this.appSettings.changeFontSize(direction);
   }
 
   toggleHighContrast() {

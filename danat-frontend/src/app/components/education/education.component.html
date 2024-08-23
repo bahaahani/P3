@@ -1,22 +1,27 @@
 <div class="education-container">
-  <h1>Education at DANAT</h1>
+  <h1 class="text-3xl font-bold">Education at DANAT</h1>
 
-  <section class="course-categories">
-    <h2>Course Categories</h2>
-    <div class="category-grid">
-      <div *ngFor="let category of courseCategories" class="category-card">
-        <h3>{{ category.name }}</h3>
-        <p>{{ category.description }}</p>
-        <ul>
-          <li *ngFor="let course of category.courses">{{ course }}</li>
+  <section class="course-categories mt-8">
+    <h2 class="text-2xl font-bold">Course Categories</h2>
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      <div
+        *ngFor="let category of courseCategories"
+        class="bg-white p-4 rounded shadow"
+      >
+        <h3 class="text-xl font-bold">{{ category.name }}</h3>
+        <p class="mt-2">{{ category.description }}</p>
+        <ul class="mt-2">
+          <li *ngFor="let course of category.courses" class="list-disc ml-4">
+            {{ course }}
+          </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="admission-process">
-    <h2>Admission Process</h2>
-    <ol>
+  <section class="admission-process mt-8">
+    <h2 class="text-2xl font-bold">Admission Process</h2>
+    <ol class="list-decimal mt-4">
       <li>Submit online application</li>
       <li>Provide academic transcripts</li>
       <li>Complete entrance exam (if required)</li>
@@ -26,25 +31,42 @@
     </ol>
   </section>
 
-  <section class="facilities">
-    <h2>Our Facilities</h2>
-    <ul>
-      <li *ngFor="let facility of facilities">{{ facility }}</li>
+  <section class="scholarships mt-8">
+    <h2 class="text-2xl font-bold">Scholarships</h2>
+    <p class="mt-4">
+      We offer various scholarships to eligible students. Apply now to see if
+      you qualify!
+    </p>
+  </section>
+
+  <section class="facilities mt-8">
+    <h2 class="text-2xl font-bold">Our Facilities</h2>
+    <ul class="mt-4">
+      <li *ngFor="let facility of facilities" class="list-disc ml-4">
+        {{ facility }}
+      </li>
     </ul>
   </section>
 
-  <section class="student-life">
-    <h2>Student Life</h2>
-    <h3>Events and Activities</h3>
-    <ul>
-      <li *ngFor="let event of events">{{ event }}</li>
+  <section class="student-life mt-8">
+    <h2 class="text-2xl font-bold">Student Life</h2>
+    <h3 class="text-xl font-bold mt-4">Events and Activities</h3>
+    <ul class="mt-2">
+      <li *ngFor="let event of events" class="list-disc ml-4">{{ event }}</li>
     </ul>
-    <h3>International Student Support</h3>
-    <p>We offer comprehensive support for international students, including visa assistance, accommodation help, and cultural integration programs.</p>
+    <h3 class="text-xl font-bold mt-4">International Student Support</h3>
+    <p class="mt-2">
+      We offer comprehensive support for international students, including visa
+      assistance, accommodation help, and cultural integration programs.
+    </p>
   </section>
 
-  <section class="apply-now">
-    <h2>Ready to Start Your Journey?</h2>
-    <a href="/registration" class="cta-button">Apply Now</a>
+  <section class="apply-now mt-8">
+    <h2 class="text-2xl font-bold">Ready to Start Your Journey?</h2>
+    <a
+      href="/registration"
+      class="mt-4 inline-block px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >Apply Now</a
+    >
   </section>
 </div>

@@ -1,48 +1,48 @@
-<div class="about-us-container">
-  <section class="section history">
-    <h2>History of DANAT</h2>
-    <p>DANAT was established in 2017 as a initiative to protect and enhance Bahrain's pearling legacy. Our institute has quickly become a global leader in gemological research and education, with a special focus on pearl testing and authentication.</p>
+<div class="about-us-container max-w-6xl mx-auto p-8 bg-background rounded-lg shadow-lg">
+  <section class="section history mb-12 p-8 bg-light rounded-lg">
+    <h2 class="text-4xl mb-6 text-primary text-center">History of DANAT</h2>
+    <p class="text-lg leading-8 text-justify text-text">DANAT was established in 2017 as a initiative to protect and enhance Bahrain's pearling legacy. Our institute has quickly become a global leader in gemological research and education, with a special focus on pearl testing and authentication.</p>
   </section>
 
-  <section class="section mission-vision">
-    <h2>Mission & Vision</h2>
-    <div class="mission">
-      <h3>Our Mission</h3>
-      <p>To advance gemological knowledge through cutting-edge research and world-class education, while preserving Bahrain's rich pearling heritage.</p>
+  <section class="section mission-vision mb-12 p-8 bg-light rounded-lg">
+    <h2 class="text-4xl mb-6 text-primary text-center">Mission & Vision</h2>
+    <div class="mission mb-6 p-8 bg-background rounded-lg shadow-md">
+      <h3 class="text-3xl mb-4 text-secondary text-center">Our Mission</h3>
+      <p class="text-lg leading-8 text-justify text-text">To advance gemological knowledge through cutting-edge research and world-class education, while preserving Bahrain's rich pearling heritage.</p>
     </div>
-    <div class="vision">
-      <h3>Our Vision</h3>
-      <p>To be the world's foremost authority on pearl and gemstone research, education, and authentication.</p>
+    <div class="vision p-8 bg-background rounded-lg shadow-md">
+      <h3 class="text-3xl mb-4 text-secondary text-center">Our Vision</h3>
+      <p class="text-lg leading-8 text-justify text-text">To be the world's foremost authority on pearl and gemstone research, education, and authentication.</p>
     </div>
   </section>
 
-  <section class="section team-leadership">
-    <h2>Team & Leadership</h2>
-    <div class="grid team-grid">
-      <div *ngFor="let member of teamMembers" class="card team-member">
-        <img [src]="member.image" [alt]="member.name">
-        <h3>{{ member.name }}</h3>
-        <p>{{ member.role }}</p>
+  <section class="section team-leadership mb-12 p-8 bg-light rounded-lg">
+    <h2 class="text-4xl mb-6 text-primary text-center">Team & Leadership</h2>
+    <div class="grid team-grid flex flex-wrap gap-8 justify-center">
+      <div *ngFor="let member of teamMembers" class="card team-member flex-1 min-w-[calc(33%-32px)] bg-background rounded-lg p-8 text-center transition-transform transform hover:-translate-y-2 shadow-md">
+        <img [src]="member.image" [alt]="member.name" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h3 class="text-2xl mb-2 text-text">{{ member.name }}</h3>
+        <p class="text-lg text-text">{{ member.role }}</p>
       </div>
     </div>
   </section>
 
-  <section class="section affiliations-partnerships">
-    <h2>Affiliations & Partnerships</h2>
-    <div class="grid partners-grid">
-      <div *ngFor="let partner of partners" class="card partner">
-        <img [src]="partner.logo" [alt]="partner.name + ' logo'">
-        <p>{{ partner.name }}</p>
+  <section class="section affiliations-partnerships mb-12 p-8 bg-light rounded-lg">
+    <h2 class="text-4xl mb-6 text-primary text-center">Affiliations & Partnerships</h2>
+    <div class="grid partners-grid flex flex-wrap gap-8 justify-center">
+      <div *ngFor="let partner of partners" class="card partner flex-1 min-w-[calc(33%-32px)] bg-background rounded-lg p-8 text-center transition-transform transform hover:-translate-y-2 shadow-md">
+        <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="w-32 h-32 mx-auto mb-4">
+        <p class="text-lg text-text">{{ partner.name }}</p>
       </div>
     </div>
   </section>
 
-  <section class="section press-releases">
-    <h2>Press Releases</h2>
-    <ul>
-      <li><a href="#" style="color: #C03124; transition: color 0.3s;">DANAT Announces New Pearl Authentication Technique (May 15, 2023)</a></li>
-      <li><a href="#" style="color: #C03124; transition: color 0.3s;">DANAT Partners with International Gemological Institute (April 1, 2023)</a></li>
-      <li><a href="#" style="color: #C03124; transition: color 0.3s;">DANAT to Host International Gemology Conference in Bahrain (March 10, 2023)</a></li>
+  <section class="section press-releases mb-12 p-8 bg-light rounded-lg">
+    <h2 class="text-4xl mb-6 text-primary text-center">Press Releases</h2>
+    <ul class="list-none p-0">
+      <li class="mb-4"><a href="#" class="press-link text-primary transition-colors duration-300 hover:text-secondary">DANAT Announces New Pearl Authentication Technique (May 15, 2023)</a></li>
+      <li class="mb-4"><a href="#" class="press-link text-primary transition-colors duration-300 hover:text-secondary">DANAT Partners with International Gemological Institute (April 1, 2023)</a></li>
+      <li class="mb-4"><a href="#" class="press-link text-primary transition-colors duration-300 hover:text-secondary">DANAT to Host International Gemology Conference in Bahrain (March 10, 2023)</a></li>
     </ul>
   </section>
 </div>

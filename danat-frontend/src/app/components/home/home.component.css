@@ -307,3 +307,20 @@ h2 {
 .read-more:hover {
   text-decoration: underline;
 }
+
+/* Custom styles for the home component */
+.bg-primary {
+  background-color: #C03124;
+}
+
+.bg-secondary {
+  background-color: #007bff;
+}
+
+.text-primary {
+  color: #C03124;
+}
+
+.text-secondary {
+  color: #007bff;
+}
