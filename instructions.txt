@@ -1,0 +1,100 @@
+create an angular / nestjs app 
+Proposed Site Map
+1. Home
+Hero Banner (Highlighting key offerings, current promotions, or important announcements)
+Quick Links (Popular courses, Latest news, Events)
+Testimonials
+Newsletter Signup
+2. About Us
+History of DANAT
+Mission & Vision
+Team & Leadership
+Affiliations & Partnerships
+Press Releases
+3. Education
+Course Categories:
+Gemology Courses
+Pearl Diving Courses
+Jewelry Design Courses
+Course Details:
+Syllabus
+Instructors
+Schedule & Fees
+Registration Process
+Testimonials
+Resources:
+Study Materials
+Virtual Tours of Facilities
+Student Portal Access
+Student Life:
+Campus Facilities
+Events & Activities
+International Student Support
+4. Services
+Gemstone Testing
+Pearl Authentication
+Jewelry Appraisal
+Consultation Services
+Corporate Training Programs
+5. Research & Resources
+Research Publications
+Articles & Papers
+Library Access
+Case Studies
+Industry News
+6. Events
+Upcoming Events
+Past Events
+Workshops & Seminars
+Exhibitions & Fairs
+Registration for Events
+7. Press
+Press Releases
+Media Coverage
+Awards & Recognitions
+Press Kit
+8. Contact Us
+Contact Form
+Email Addresses
+Phone Numbers
+Social Media Links
+Office Locations & Hours
+Key Features
+1. Unified Course Platform
+Course Catalog: Comprehensive and easily navigable catalog of all courses offered.
+Search & Filters: Advanced search with filters for course type, duration, fees, location, etc.
+Detailed Course Pages: Include syllabus, instructor bios, testimonials, and easy access to registration.
+2. User-Friendly Navigation
+Mega Menu: Organized categories for quick access to key sections.
+Breadcrumbs: To help users understand their current location on the site.
+Sticky Navigation Bar: Ensures important links are always accessible.
+3. Seamless Registration Process
+Single Page Registration: All registration details, including course selection, payment, and personal information, on one page.
+Progress Indicator: Shows steps to completion.
+Guest Checkout: Allow users to register without creating an account, with an option to create an account later.
+4. Personalization
+Student Dashboard: Personalized space for students to view their courses, track progress, and access materials.
+Saved Courses: Option for users to save and compare courses for future registration.
+Recommendations: Based on user browsing history or completed courses.
+5. Multi-Channel Communication
+Live Chat: Instant support for inquiries.
+Social Media Integration: Allow easy sharing of courses and events on platforms like Instagram and Facebook.
+Email & SMS Notifications: Course updates, reminders, and news.
+6. Accessibility & International Support
+Multi-Language Support: Arabic and English versions of the site.
+Accessibility Features: Screen reader compatibility, adjustable font sizes, and contrast options.
+Support for International Students: Information on visas, accommodation, and cultural orientation.
+7. Mobile-Optimized
+Responsive Design: Ensures the website functions well on mobile devices.
+Mobile App Integration: Links to download the DANAT app for an enhanced experience.
+8. Security & Trust
+SSL Encryption: For secure data transmission.
+Verified Reviews & Testimonials: Authentic reviews from past students and clients.
+Secure Payment Gateway: Multiple payment options with secure processing.
+9. Content Management
+CMS Integration: Easy updating of courses, news, events, and resources by the admin team.
+Blog/News Section: Regular updates on industry news, research, and DANAT activities.
+10. Analytics & Feedback
+User Analytics: Track user behavior and course interest to optimize offerings.
+Feedback Forms: For continuous improvement based on student and visitor input.
+This structure ensures a balance between a comprehensive and user-friendly experience, catering to both local and international students while highlighting DANAT's expertise and offerings.

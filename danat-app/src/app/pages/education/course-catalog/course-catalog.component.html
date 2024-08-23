@@ -1,0 +1,22 @@
+<div class="course-catalog">
+  <div class="filters">
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterCourses()" placeholder="Search courses...">
+    <select [(ngModel)]="selectedType" (change)="filterCourses()">
+      <option value="">All Types</option>
+      <option value="Gemology">Gemology</option>
+      <option value="Pearl Diving">Pearl Diving</option>
+      <option value="Jewelry Design">Jewelry Design</option>
+    </select>
+  </div>
+
+  <div class="course-list">
+    <div *ngFor="let course of filteredCourses" class="course-card">
+      <h2>{{ course.title }}</h2>
+      <p>Type: {{ course.type }}</p>
+      <p>Duration: {{ course.duration }}</p>
+      <p>Fee: ${{ course.fee }}</p>
+      <p>Location: {{ course.location }}</p>
+      <button>View Details</button>
+    </div>
+  </div>
+</div>

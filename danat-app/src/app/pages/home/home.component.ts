@@ -5,15 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    @if (title) {
-      <h1>{{ title }}</h1>
-    }
-    <!-- Add more content here -->
-  `,
-  styles: [`
-    /* Component styles */
-  `]
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   title = 'Welcome to DANAT';

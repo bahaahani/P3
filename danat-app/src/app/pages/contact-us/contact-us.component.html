@@ -1,0 +1,17 @@
+<div class="contact-us-container">
+  <h1>Contact Us</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email"><br><br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" [(ngModel)]="message"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+  <section class="contact-info">
+    <p>Address: 123 Main St, Anytown, USA</p>
+    <p>Phone: 555-555-5555</p>
+    <p>Email: infodanat.com</p>
+  </section>
+</div>

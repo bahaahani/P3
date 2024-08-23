@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
-import { EducationComponent } from './components/education/education.component';
-import { ServicesComponent } from './components/services/services.component';
-import { ResearchComponent } from './components/research/research.component';
-import { EventsComponent } from './components/events/events.component';
-import { PressComponent } from './components/press/press.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { EducationComponent } from './pages/education/education.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ResearchComponent } from './pages/research/research.component';
+import { EventsComponent } from './pages/events/events.component';
+import { PressComponent } from './pages/press/press.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

@@ -1,9 +1,17 @@
-import { Module } from '@nestjs/common';
-import { CoursesController } from './courses.controller';
-import { CoursesService } from './courses.service';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CourseCatalogComponent } from './course-catalog/course-catalog.component';
 
-@Module({
-  controllers: [CoursesController],
-  providers: [CoursesService],
+@NgModule({
+  declarations: [
+    CourseCatalogComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  providers: [],
+  exports: [
+    CourseCatalogComponent
+  ]
 })
-export class CoursesModule {}
+export class CoursesModule { }
