@@ -1,0 +1,16 @@
+<div class="accessibility-controls">
+  <button (click)="changeFontSize('increase')" aria-label="Increase font size">
+    A+
+  </button>
+  <button (click)="changeFontSize('decrease')" aria-label="Decrease font size">
+    A-
+  </button>
+  <button
+    (click)="toggleHighContrast()"
+    aria-label="Toggle high contrast mode"
+  ></button>
+  <button
+    (click)="toggleDyslexicFont()"
+    aria-label="Toggle dyslexic-friendly font"
+  ></button>
+</div>
