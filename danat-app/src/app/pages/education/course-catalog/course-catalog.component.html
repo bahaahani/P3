@@ -7,16 +7,24 @@
       <option value="Pearl Diving">Pearl Diving</option>
       <option value="Jewelry Design">Jewelry Design</option>
     </select>
+    <select [(ngModel)]="sortBy" (change)="sortCourses()">
+      <option value="title">Sort by Title</option>
+      <option value="fee">Sort by Fee</option>
+      <option value="duration">Sort by Duration</option>
+    </select>
   </div>
 
   <div class="course-list">
     <div *ngFor="let course of filteredCourses" class="course-card">
       <h2>{{ course.title }}</h2>
-      <p>Type: {{ course.type }}</p>
-      <p>Duration: {{ course.duration }}</p>
-      <p>Fee: ${{ course.fee }}</p>
-      <p>Location: {{ course.location }}</p>
-      <button>View Details</button>
+      <p class="course-type">{{ course.type }}</p>
+      <p class="course-description">{{ course.description }}</p>
+      <div class="course-details">
+        <p><strong>Duration:</strong> {{ course.duration }}</p>
+        <p><strong>Fee:</strong> ${{ course.fee }}</p>
+        <p><strong>Location:</strong> {{ course.location }}</p>
+      </div>
+      <button>Enroll Now</button>
     </div>
   </div>
 </div>

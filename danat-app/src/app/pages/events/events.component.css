@@ -4,10 +4,44 @@
   padding: 20px;
 }
 
-h1 {
+h1, h2 {
   color: #333;
+  text-align: center;
 }
 
-section {
+h1 {
   margin-bottom: 30px;
 }
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.event-card h3 {
+  color: #337ab7;
+  margin-bottom: 10px;
+}
+
+.event-date, .event-location {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event-description {
+  margin-bottom: 15px;
+}
+
+.register-btn {

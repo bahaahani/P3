@@ -24,11 +24,26 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .course-card h2 {
   margin-top: 0;
   color: #337ab7;
+}
+
+.course-type {
+  font-weight: bold;
+  color: #666;
+}
+
+.course-description {
+  flex-grow: 1;
+}
+
+.course-details {
+  margin-top: 10px;
 }
 
 .course-card button {
@@ -39,6 +54,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  align-self: flex-start;
 }
 
 .course-card button:hover {

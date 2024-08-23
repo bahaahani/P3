@@ -1,12 +1,11 @@
 <div class="services-container">
   <h1>Our Services</h1>
-  <section class="service-list">
-    <ul>
-      <li>Lab Testing</li>
-      <li>Appraisal Services</li>
-      <li>Education and Training</li>
-      <li>Consultancy Services</li>
-      <li>Research and Development</li>
-    </ul>
-  </section>
+  <p class="services-intro">DANAT offers a wide range of services to meet the needs of gemstone and pearl enthusiasts, professionals, and businesses.</p>
+  <div class="service-list">
+    <div *ngFor="let service of services" class="service-card">
+      <i class="fas {{ service.icon }} service-icon"></i>
+      <h2>{{ service.name }}</h2>
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
 </div>

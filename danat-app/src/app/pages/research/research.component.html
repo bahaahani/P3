@@ -1,19 +1,22 @@
 <div class="research-container">
   <h1>Research at DANAT</h1>
+  
   <section class="research-areas">
     <h2>Research Areas</h2>
-    <ul>
-      <li>Research Area 1</li>
-      <li>Research Area 2</li>
-      <li>Research Area 3</li>
-    </ul>
+    <div class="research-area" *ngFor="let area of researchAreas">
+      <h3>{{ area.title }}</h3>
+      <p>{{ area.description }}</p>
+    </div>
   </section>
+  
   <section class="publications">
-    <h2>Publications</h2>
-    <ul>
-      <li>Publication 1</li>
-      <li>Publication 2</li>
-      <li>Publication 3</li>
+    <h2>Recent Publications</h2>
+    <ul class="publication-list">
+      <li *ngFor="let pub of publications" class="publication-item">
+        <h3><a [href]="pub.link" target="_blank">{{ pub.title }}</a></h3>
+        <p class="authors">{{ pub.authors }}</p>
+        <p class="journal-info">{{ pub.journal }}, {{ pub.year }}</p>
+      </li>
     </ul>
   </section>
 </div>

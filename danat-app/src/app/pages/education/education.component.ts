@@ -9,4 +9,7 @@ import { CourseCatalogComponent } from "./course-catalog/course-catalog.componen
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent { }
+export class EducationComponent {
+  title = 'Education at DANAT';
+  description = 'Discover our wide range of courses in gemology, pearl diving, and jewelry design.';
+}
