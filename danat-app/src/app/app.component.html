@@ -1,7 +1,9 @@
 <header>
   <app-mega-menu></app-mega-menu>
 </header>
-
+<div class="loading-wrapper" *ngIf="isLoading">
+  <app-loading-indicator></app-loading-indicator>
+</div>
 <main>
   <router-outlet></router-outlet>
 </main>

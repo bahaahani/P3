@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MegaMenuComponent } from './components/mega-menu/mega-menu.component';
@@ -7,6 +7,10 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
 import { AccessibilityControlsComponent } from './components/accessibility-controls/accessibility-controls.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppSettingsService } from './services/app-settings.service';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
+import { LoadingService } from './services/loading.service';
+import { timer } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -18,15 +22,32 @@ import { AppSettingsService } from './services/app-settings.service';
     LiveChatComponent,
     LanguageSelectorComponent,
     AccessibilityControlsComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingIndicatorComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private appSettings: AppSettingsService) {}
+  isLoading: boolean = true;
+
+  private appSettings = inject(AppSettingsService);
+  private loadingService = inject(LoadingService);
 
   ngOnInit() {
+    // Show loading indicator for at least 1 second
+    this.loadingService.setLoading(true);
+    timer(1000).pipe(take(1)).subscribe(() => {
+      this.loadingService.setLoading(false);
+    });
+
+    this.loadingService.isLoading$.subscribe(
+      (isLoading: boolean) => {
+        this.isLoading = isLoading;
+      }
+    );
+
+    // Existing subscriptions
     this.appSettings.fontSize$.subscribe(size => {
       document.documentElement.style.setProperty('--base-font-size', `${size}px`);
     });
