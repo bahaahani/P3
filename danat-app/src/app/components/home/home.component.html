@@ -1,22 +1,51 @@
 <div class="home-container">
-  <section class="hero-banner">
-    <!-- Hero banner content will go here -->
-    <h1>Welcome to DANAT</h1>
-    <!-- Add more content for key offerings, promotions, etc. -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the World of Gems with DANAT</h1>
+      <p>Unlock your potential in gemology, pearl grading, and jewelry design</p>
+      <a routerLink="/courses" class="cta-button">Explore Our Courses</a>
+    </div>
   </section>
 
-  <section class="quick-links">
-    <h2>Quick Links</h2>
-    <!-- Add links for popular courses, latest news, events -->
+  <section class="featured-courses">
+    <h2>Featured Courses</h2>
+    <div class="course-grid">
+      <div *ngFor="let course of featuredCourses" class="course-card">
+        <img [src]="course.image" [alt]="course.title">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <a routerLink="/courses" class="button">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us">
+    <div class="about-content">
+      <h2>About DANAT</h2>
+      <p>DANAT is a world-class institute dedicated to the study and appreciation of pearls and gemstones. Our expert instructors and state-of-the-art facilities provide unparalleled education in gemology.</p>
+      <a routerLink="/about" class="button">Learn More About Us</a>
+    </div>
   </section>
 
   <section class="testimonials">
-    <h2>Testimonials</h2>
-    <!-- Add testimonials -->
+    <h2>What Our Students Say</h2>
+    <div class="testimonial-grid">
+      <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+        <p>"{{ testimonial.text }}"</p>
+        <cite>- {{ testimonial.name }}, {{ testimonial.role }}</cite>
+      </div>
+    </div>
   </section>
 
-  <section class="newsletter-signup">
-    <h2>Sign up for our Newsletter</h2>
-    <!-- Add newsletter signup form -->
+  <section class="cta">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Enroll in our courses and become a part of the DANAT community</p>
+    <a routerLink="/register" class="cta-button">Register Now</a>
   </section>
 </div>
+
+<app-live-chat></app-live-chat>
+
+<footer>
+  <p>&copy; 2023 DANAT. All rights reserved.</p>
+</footer>

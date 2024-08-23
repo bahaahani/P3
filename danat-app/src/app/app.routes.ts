@@ -10,4 +10,5 @@ export const routes: Routes = [
   { path: 'press', loadComponent: () => import('./pages/press/press.component').then(m => m.PressComponent) },
   { path: 'contact-us', loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent) },
   { path: 'dashboard', loadComponent: () => import('./components/student-dashboard/student-dashboard.component').then(m => m.StudentDashboardComponent) },
+  { path: 'registration', loadComponent: () => import('./components/registration/registration.component').then(m => m.RegistrationComponent) },
 ];

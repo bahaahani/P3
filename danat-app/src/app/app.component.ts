@@ -36,5 +36,13 @@ export class AppComponent implements OnInit {
         document.body.classList.remove('high-contrast');
       }
     });
+
+    this.appSettings.dyslexicFont$.subscribe(dyslexicFont => {
+      if (dyslexicFont) {
+        document.body.classList.add('dyslexic-font');
+      } else {
+        document.body.classList.remove('dyslexic-font');
+      }
+    });
   }
 }

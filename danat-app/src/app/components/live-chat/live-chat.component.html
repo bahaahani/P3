@@ -1,7 +1,10 @@
 <div class="live-chat">
+  <div class="chat-header">
+    Live Chat
+  </div>
   <div class="chat-messages">
-    <div *ngFor="let message of messages" class="message">
-      {{ message }}
+    <div *ngFor="let message of messages" class="message" [ngClass]="{'user': message.sender === 'user', 'bot': message.sender === 'bot'}">
+      {{ message.text }}
     </div>
   </div>
   <div class="chat-input">

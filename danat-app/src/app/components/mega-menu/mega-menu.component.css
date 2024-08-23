@@ -1,24 +1,39 @@
 .mega-menu {
-  background-color: #f8f9fa;
+  background-color: var(--primary-color);
   padding: 1rem;
 }
 
-.mega-menu > ul {
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-items {
   display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.mega-menu > ul > li {
+.menu-items li {
   position: relative;
   margin-right: 1rem;
 }
 
-.mega-menu > ul > li > a {
+.menu-items a {
   text-decoration: none;
-  color: #333;
+  color: white;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-items a:hover, .menu-items a.active {
+  background-color: var(--secondary-color);
 }
 
 .submenu {
@@ -26,29 +41,57 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 0 0 4px 4px;
+  padding: 0.5rem 0;
   z-index: 1000;
 }
 
-.mega-menu > ul > li:hover .submenu {
+.menu-items li:hover .submenu {
   display: flex;
+  flex-direction: column;
 }
 
-.submenu-column {
-  margin-right: 2rem;
+.submenu a {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
 }
 
-.submenu-column h3 {
-  margin-top: 0;
+.menu-controls {
+  display: flex;
+  align-items: center;
 }
 
-.submenu-column ul {
-  list-style-type: none;
-  padding: 0;
+.menu-controls app-language-selector,
+.menu-controls app-accessibility-controls {
+  margin-left: 1rem;
 }
 
-.submenu-column ul li {
-  margin-bottom: 0.5rem;
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-items li {
+    margin: 0.5rem 0;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    background-color: var(--secondary-color);
+  }
+
+  .menu-items li:hover .submenu {
+    display: flex;
+  }
+
+  .menu-controls {
+    margin-top: 1rem;
+  }
 }

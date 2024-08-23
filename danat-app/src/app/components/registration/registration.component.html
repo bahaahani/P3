@@ -10,9 +10,24 @@
       <input id="email" type="email" formControlName="email">
     </div>
     <div>
+      <label for="nationality">Nationality:</label>
+      <input id="nationality" type="text" formControlName="nationality">
+    </div>
+    <div>
+      <label>
+        <input type="radio" formControlName="isBahrainiNational" [value]="true"> Bahraini National
+      </label>
+      <label>
+        <input type="radio" formControlName="isBahrainiNational" [value]="false"> Non-Bahraini
+      </label>
+    </div>
+    <div>
       <label for="course">Course:</label>
       <select id="course" formControlName="course">
-        <!-- Add course options here -->
+        <option value="">Select a course</option>
+        <option value="gemology">Introduction to Gemology</option>
+        <option value="pearl-diving">Pearl Diving Certification</option>
+        <option value="jewelry-design">Jewelry Design Fundamentals</option>
       </select>
     </div>
     <button type="submit" [disabled]="!registrationForm.valid">Register</button>

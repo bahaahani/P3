@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -10,19 +10,22 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  registrationForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    course: ['', Validators.required],
-    // Add more form fields as needed
-  });
+  registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.registrationForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      nationality: ['', Validators.required],
+      isBahrainiNational: [false, Validators.required],
+      course: ['', Validators.required],
+    });
+  }
 
   onSubmit() {
     if (this.registrationForm.valid) {
-      // Handle form submission
       console.log(this.registrationForm.value);
+      // Here you would typically send the form data to a backend service
     }
   }
 }
