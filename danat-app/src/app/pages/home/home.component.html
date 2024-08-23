@@ -1,15 +1,34 @@
 <div class="home-container">
-  <h1>{{ title }}</h1>
   <section class="hero-banner">
-    <!-- Add hero banner content -->
+    <h1>{{ title }}</h1>
+    <p>Discover the world of gemology with DANAT</p>
+    <a routerLink="/education" class="cta-button">Explore Our Courses</a>
   </section>
+
   <section class="quick-links">
-    <!-- Add quick links content -->
+    <h2>Quick Links</h2>
+    <div class="links-container">
+      <a routerLink="/education">Courses</a>
+      <a routerLink="/services">Services</a>
+      <a routerLink="/research">Research</a>
+      <a routerLink="/events">Events</a>
+    </div>
   </section>
+
   <section class="testimonials">
-    <!-- Add testimonials content -->
+    <h2>What Our Students Say</h2>
+    <div class="testimonial">
+      <p>"DANAT's courses have been instrumental in advancing my career in gemology."</p>
+      <cite>- Jane Doe, Graduate</cite>
+    </div>
+    <!-- Add more testimonials as needed -->
   </section>
+
   <section class="newsletter-signup">
-    <!-- Add newsletter signup form -->
+    <h2>Stay Updated</h2>
+    <form (ngSubmit)="onSubscribe()">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 </div>

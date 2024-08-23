@@ -4,9 +4,67 @@
   padding: 20px;
 }
 
-h1 {
-  color: #333;
+.hero-banner {
+  background-image: url('/assets/hero-banner.jpg');
+  background-size: cover;
+  color: white;
   text-align: center;
+  padding: 100px 0;
+  margin-bottom: 40px;
 }
 
-/* Add more styles as needed */
+.hero-banner h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #337ab7;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.quick-links, .testimonials, .newsletter-signup {
+  margin-bottom: 40px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.links-container a {
+  text-decoration: none;
+  color: #337ab7;
+  font-weight: bold;
+}
+
+.testimonial {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.newsletter-signup form {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-signup input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.newsletter-signup button {
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
