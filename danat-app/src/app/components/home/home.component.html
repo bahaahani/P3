@@ -2,7 +2,9 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Discover the World of Gems with DANAT</h1>
-      <p>Unlock your potential in gemology, pearl grading, and jewelry design</p>
+      <p>
+        Unlock your potential in gemology, pearl grading, and jewelry design
+      </p>
       <a routerLink="/courses" class="cta-button">Explore Our Courses</a>
     </div>
   </section>
@@ -11,7 +13,7 @@
     <h2>Featured Courses</h2>
     <div class="course-grid">
       <div *ngFor="let course of featuredCourses" class="course-card">
-        <img [src]="course.image" [alt]="course.title">
+        <img [src]="course.image" [alt]="course.title" />
         <h3>{{ course.title }}</h3>
         <p>{{ course.description }}</p>
         <a [routerLink]="course.link" class="button">Learn More</a>
@@ -34,7 +36,7 @@
     <div class="news-grid">
       <div *ngFor="let news of latestNews" class="news-card">
         <h3>{{ news.title }}</h3>
-        <p class="news-date">{{ news.date | date:'mediumDate' }}</p>
+        <p class="news-date">{{ news.date | date : "mediumDate" }}</p>
         <p>{{ news.summary }}</p>
         <a [routerLink]="news.link" class="read-more">Read More</a>
       </div>
@@ -45,7 +47,11 @@
     <h2>Our Partners and Affiliations</h2>
     <div class="partners-grid">
       <div *ngFor="let partner of partners" class="partner-card">
-        <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="partner-logo">
+        <img
+          [src]="partner.logo"
+          [alt]="partner.name + ' logo'"
+          class="partner-logo"
+        />
         <p>{{ partner.name }}</p>
       </div>
     </div>
@@ -57,7 +63,7 @@
       <div *ngFor="let research of latestResearch" class="research-card">
         <h3>{{ research.title }}</h3>
         <p class="authors">{{ research.authors }}</p>
-        <p class="date">{{ research.date | date:'mediumDate' }}</p>
+        <p class="date">{{ research.date | date : "mediumDate" }}</p>
         <p class="summary">{{ research.summary }}</p>
         <a [routerLink]="research.link" class="read-more">Read Full Paper</a>
       </div>
@@ -67,7 +73,11 @@
   <section class="about-us">
     <div class="about-content">
       <h2>About DANAT</h2>
-      <p>DANAT is a world-class institute dedicated to the study and appreciation of pearls and gemstones. Our expert instructors and state-of-the-art facilities provide unparalleled education in gemology.</p>
+      <p>
+        DANAT is a world-class institute dedicated to the study and appreciation
+        of pearls and gemstones. Our expert instructors and state-of-the-art
+        facilities provide unparalleled education in gemology.
+      </p>
       <a routerLink="/about" class="button">Learn More About Us</a>
     </div>
   </section>
@@ -80,7 +90,3 @@
 </div>
 
 <app-live-chat></app-live-chat>
-
-<footer>
-  <p>&copy; 2023 DANAT. All rights reserved.</p>
-</footer>

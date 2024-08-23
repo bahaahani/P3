@@ -1,156 +1,66 @@
-Here's a breakdown of the tasks associated with the proposed site map and features for DANAT, organized into specific responsibilities that can be assigned to different developers or teams:
 
-i am using danat-app, use angular 17, the code lies in danat/src/app be mindful to seperate html css and ts seperately, 
+Here’s a detailed prompt for a smart, detail-oriented software engineer to design a NestJS app from scratch tailored for the project requirements:
 
-1. Home Page
-Hero Banner Implementation:
-Design & UI Developer: Create and design the hero banner layout.
-Backend Developer: Implement dynamic content loading (e.g., promotions, announcements).
-Quick Links Section:
-Frontend Developer: Develop quick link tiles for popular courses, news, and events.
-Backend Developer: Fetch and display data for the quick links dynamically.
-Testimonials Section:
-UI/UX Designer: Design testimonial cards and layout.
-Backend Developer: Fetch testimonials from the database.
-Newsletter Signup:
-Frontend Developer: Create the newsletter signup form.
-Backend Developer: Integrate with the email marketing platform or database.
-2. About Us
-History, Mission & Vision Pages:
-Content Writer: Draft the content.
-UI/UX Designer: Design the layout for text-heavy pages.
-Frontend Developer: Implement the layout and content.
-Team & Leadership:
-UI/UX Designer: Design the team profiles layout.
-Backend Developer: Fetch team data from the database.
-Affiliations & Partnerships:
-Frontend Developer: Develop an affiliations grid with logos and descriptions.
-Backend Developer: Implement a dynamic backend to update affiliations easily.
-Press Releases:
-Backend Developer: Build a CMS for managing press releases.
-Frontend Developer: Develop the press release archive and individual pages.
-3. Education
-Course Categories and Listings:
-Frontend Developer: Create course category pages with filtering options.
-Backend Developer: Integrate with the database to fetch and filter courses.
-Course Detail Pages:
-UI/UX Designer: Design the course detail page layout.
-Backend Developer: Fetch course details, instructors, schedules, and testimonials.
-Registration Process:
-Frontend Developer: Develop a single-page registration form with progress indicators.
-Backend Developer: Handle form submission, validation, and user data storage.
-Student Life & Campus Facilities:
-Content Writer: Write content for student life and campus facilities.
-Frontend Developer: Implement content on a visually engaging page.
-4. Services
-Service Offerings (Gemstone Testing, Pearl Authentication, etc.):
-UI/UX Designer: Design service offering pages.
-Backend Developer: Develop backend logic for managing services and service requests.
-Corporate Training Programs:
-Content Writer: Draft program descriptions and details.
-Frontend Developer: Implement a layout for showcasing corporate training options.
-5. Research & Resources
-Research Publications & Library Access:
-Frontend Developer: Develop a research publication repository.
-Backend Developer: Build a backend system for adding and managing publications.
-Industry News & Articles:
-Content Writer: Create or curate industry-related articles.
-Frontend Developer: Implement a blog-like structure for news and articles.
-Case Studies:
-Content Writer: Write case studies based on past projects.
-Frontend Developer: Develop a case study archive and individual case study pages.
-6. Events
-Event Listings & Registration:
-Frontend Developer: Create event listing pages with registration functionality.
-Backend Developer: Develop backend logic for managing events and registrations.
-Workshops & Seminars:
-UI/UX Designer: Design a section dedicated to workshops and seminars.
-Frontend Developer: Implement layout and integration with event registration.
-7. Press
-Media Coverage & Awards:
-UI/UX Designer: Design a layout for media coverage and awards.
-Backend Developer: Create a backend system for adding media mentions and awards.
-Press Kit:
-Content Writer: Prepare press kit materials.
-Frontend Developer: Implement a downloadable press kit section.
-8. Contact Us
-Contact Form Development:
-Frontend Developer: Create a contact form with fields for name, email, message, etc.
-Backend Developer: Implement form submission logic and email notifications.
-Office Locations & Hours:
-UI/UX Designer: Design a page layout for office locations and hours.
-Frontend Developer: Implement the layout with interactive maps and contact details.
-9. Unified Course Platform
-Course Catalog & Search:
-Frontend Developer: Develop the course catalog with search and filter functionality.
-Backend Developer: Integrate with the course database and build search APIs.
-Detailed Course Pages:
-UI/UX Designer: Design the detailed course pages.
-Frontend Developer: Implement the course pages with all necessary details.
-Saved Courses & Recommendations:
-Backend Developer: Implement a system for saving courses and generating recommendations based on user behavior.
-10. Seamless Registration Process
-Progress Indicator & Guest Checkout:
-Frontend Developer: Develop the UI for the registration process, including the progress indicator.
-Backend Developer: Handle user session management and guest checkout logic.
-11. Personalization & Student Dashboard
-Dashboard Development:
-Frontend Developer: Create a student dashboard layout.
-Backend Developer: Develop backend logic for fetching and displaying personalized student data.
-Personalized Recommendations:
-Backend Developer: Build algorithms for course recommendations based on browsing history.
-12. Multi-Channel Communication
-Live Chat Integration:
-Frontend Developer: Integrate a third-party live chat solution.
-Backend Developer: Ensure chat data is stored securely.
+Project Requirements Overview:
+
+We are building a NestJS-based web application for DANAT, focusing on features such as user authentication, course management, social media integration, and a user-friendly UI/UX. The project will involve a RESTful API for handling the backend logic and data management, integrated with Angular on the frontend.
+
+Tasks Overview:
+
+Project Initialization:
+
+Set up a new NestJS project using the Nest CLI.
+Organize the project structure according to best practices (e.g., feature modules, shared modules).
+Packages & Dependencies:
+
+Install and configure the following essential packages:
+@nestjs/core, @nestjs/common, @nestjs/platform-express: Core framework packages.
+TypeORM: For database interaction (choose between MySQL, PostgreSQL).
+class-validator, class-transformer: For validation and transformation of DTOs.
+Passport, @nestjs/passport, @nestjs/jwt: For authentication and JWT token management.
+Swagger: For API documentation.
+Multer: For handling file uploads.
+bcryptjs: For password hashing.
+Axios: For HTTP requests (e.g., social media integration).
+dotenv: For environment variables.
+Rate limiting, Throttling: For security purposes.
+Database Setup:
+
+Choose between MySQL or PostgreSQL.
+Design the schema based on the requirements:
+Users table: For authentication and role management.
+Courses table: For course information management.
+Enrollments table: To track student course enrollment.
+Use TypeORM entities for schema definition and migration management.
+Authentication & Authorization:
+
+Implement JWT-based authentication.
+Role-based access control (Admin, User) using guards and decorators.
+Password hashing and secure storage using bcrypt.
+Course Management Module:
+
+Implement CRUD operations for course management.
+Enable file uploads for course materials using Multer.
+Add filtering and search functionalities.
 Social Media Integration:
-Frontend Developer: Implement sharing buttons and social media feeds.
-Email & SMS Notifications:
-Backend Developer: Set up systems for sending automated notifications based on user actions.
-13. Accessibility & International Support
-Multi-Language Support:
-Frontend Developer: Implement language toggle functionality.
-Content Team: Translate content into the required languages.
-Accessibility Features:
-Frontend Developer: Ensure compliance with accessibility standards (e.g., ARIA).
-International Student Support:
-Content Writer: Develop content for international students.
-Frontend Developer: Implement an informational section dedicated to international students.
-14. Mobile Optimization
-Responsive Design:
-Frontend Developer: Ensure all pages are fully responsive across devices.
-Mobile App Integration:
-Frontend Developer: Add links to mobile apps and ensure smooth integration with the website.
-15. Security & Trust
-SSL Encryption & Payment Gateway:
-Backend Developer: Ensure all data transmission is encrypted and implement a secure payment gateway.
-Verified Reviews & Testimonials:
-Backend Developer: Integrate a review management system.
-Frontend Developer: Display verified reviews on relevant pages.
-16. Content Management
-CMS Integration:
-Backend Developer: Set up a content management system for easy updates.
-Blog/News Section:
-Frontend Developer: Develop a blog section with CMS integration for easy posting.
-17. Analytics & Feedback
-User Analytics Implementation:
-Backend Developer: Set up analytics tools like Google Analytics to track user behavior.
-Feedback Forms:
-Frontend Developer: Create and implement feedback forms on various pages.
-Task Assignment Strategy
-Frontend Team:
 
-Focus on implementing the UI/UX designs, ensuring mobile responsiveness, integrating third-party services (e.g., live chat, social media), and creating dynamic and interactive elements (e.g., search and filters, course catalog).
-Backend Team:
+Set up API calls to social media platforms using Axios.
+Implement OAuth2 if necessary for deeper integrations.
+Validation & Error Handling:
 
-Responsible for developing and maintaining the database, implementing course and user management systems, integrating payment gateways, handling content management systems, and setting up secure communication channels (e.g., email notifications, live chat data).
-UI/UX Design Team:
+Use class-validator for request payload validation.
+Implement global error handling for consistent API responses.
+Documentation & Testing:
 
-Work on wireframes, user interface design, and ensuring accessibility standards are met. They will also handle the design of the dashboard, course pages, and other key sections.
-Content Team:
+Use Swagger to generate API documentation.
+Write unit and e2e tests using Jest.
+Deployment & Environment Setup:
 
-Focus on writing and editing content for the website, ensuring it's engaging, SEO-friendly, and accessible in multiple languages if needed.
-Quality Assurance (QA) Team:
+Set up Docker for containerization.
+Use dotenv for environment-specific configurations.
+Prepare for deployment on platforms like Vercel.
+Expected Deliverables:
 
-Responsible for testing the website across various devices, ensuring there are no bugs or issues, and confirming that the site meets all functional requirements.
-This task breakdown should help in distributing the workload efficiently among your team members, ensuring a smooth development process and a successful website launch.
+Fully functioning backend with API documentation.
+Clean, maintainable code with appropriate comments.
+Comprehensive test coverage and successful CI/CD pipeline setup.

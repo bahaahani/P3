@@ -1,48 +1,48 @@
-<div class="about-us-container">
-  <section class="history">
-    <h2>History of DANAT</h2>
-    <p>DANAT was established in 2017 as a initiative to protect and enhance Bahrain's pearling legacy. Our institute has quickly become a global leader in gemological research and education, with a special focus on pearl testing and authentication.</p>
+<div class="max-w-7xl mx-auto p-6 font-sans text-gray-800 bg-white rounded-lg shadow-lg">
+  <section class="mb-10">
+    <h2 class="text-4xl font-bold text-primary mb-4 text-center">History of DANAT</h2>
+    <p class="text-lg leading-relaxed text-justify">DANAT was established in 2017 as a initiative to protect and enhance Bahrain's pearling legacy. Our institute has quickly become a global leader in gemological research and education, with a special focus on pearl testing and authentication.</p>
   </section>
 
-  <section class="mission-vision">
-    <h2>Mission & Vision</h2>
-    <div class="mission">
-      <h3>Our Mission</h3>
-      <p>To advance gemological knowledge through cutting-edge research and world-class education, while preserving Bahrain's rich pearling heritage.</p>
+  <section class="mb-10">
+    <h2 class="text-4xl font-bold text-primary mb-4 text-center">Mission & Vision</h2>
+    <div class="bg-gray-100 p-6 rounded-lg mb-6">
+      <h3 class="text-2xl font-semibold text-secondary mb-2 text-center">Our Mission</h3>
+      <p class="text-lg leading-relaxed text-justify">To advance gemological knowledge through cutting-edge research and world-class education, while preserving Bahrain's rich pearling heritage.</p>
     </div>
-    <div class="vision">
-      <h3>Our Vision</h3>
-      <p>To be the world's foremost authority on pearl and gemstone research, education, and authentication.</p>
+    <div class="bg-gray-100 p-6 rounded-lg">
+      <h3 class="text-2xl font-semibold text-secondary mb-2 text-center">Our Vision</h3>
+      <p class="text-lg leading-relaxed text-justify">To be the world's foremost authority on pearl and gemstone research, education, and authentication.</p>
     </div>
   </section>
 
-  <section class="team-leadership">
-    <h2>Team & Leadership</h2>
-    <div class="team-grid">
-      <div *ngFor="let member of teamMembers" class="team-member">
-        <img [src]="member.image" [alt]="member.name">
-        <h3>{{ member.name }}</h3>
-        <p>{{ member.role }}</p>
+  <section class="mb-10">
+    <h2 class="text-4xl font-bold text-primary mb-4 text-center">Team & Leadership</h2>
+    <div class="flex flex-wrap gap-6 justify-center">
+      <div *ngFor="let member of teamMembers" class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <img [src]="member.image" [alt]="member.name" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-secondary mb-2">{{ member.name }}</h3>
+        <p class="text-lg">{{ member.role }}</p>
       </div>
     </div>
   </section>
 
-  <section class="affiliations-partnerships">
-    <h2>Affiliations & Partnerships</h2>
-    <div class="partners-grid">
-      <div *ngFor="let partner of partners" class="partner">
-        <img [src]="partner.logo" [alt]="partner.name + ' logo'">
-        <p>{{ partner.name }}</p>
+  <section class="mb-10">
+    <h2 class="text-4xl font-bold text-primary mb-4 text-center">Affiliations & Partnerships</h2>
+    <div class="flex flex-wrap gap-6 justify-center">
+      <div *ngFor="let partner of partners" class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="w-32 h-32 mx-auto mb-4">
+        <p class="text-lg">{{ partner.name }}</p>
       </div>
     </div>
   </section>
 
-  <section class="press-releases">
-    <h2>Press Releases</h2>
-    <ul>
-      <li><a href="#">DANAT Announces New Pearl Authentication Technique (May 15, 2023)</a></li>
-      <li><a href="#">DANAT Partners with International Gemological Institute (April 1, 2023)</a></li>
-      <li><a href="#">DANAT to Host International Gemology Conference in Bahrain (March 10, 2023)</a></li>
+  <section>
+    <h2 class="text-4xl font-bold text-primary mb-4 text-center">Press Releases</h2>
+    <ul class="list-none p-0">
+      <li class="mb-4"><a href="#" class="text-primary hover:text-secondary transition-colors">DANAT Announces New Pearl Authentication Technique (May 15, 2023)</a></li>
+      <li class="mb-4"><a href="#" class="text-primary hover:text-secondary transition-colors">DANAT Partners with International Gemological Institute (April 1, 2023)</a></li>
+      <li class="mb-4"><a href="#" class="text-primary hover:text-secondary transition-colors">DANAT to Host International Gemology Conference in Bahrain (March 10, 2023)</a></li>
     </ul>
   </section>
 </div>
