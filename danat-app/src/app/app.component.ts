@@ -5,6 +5,7 @@ import { MegaMenuComponent } from './components/mega-menu/mega-menu.component';
 import { LiveChatComponent } from './components/live-chat/live-chat.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { AccessibilityControlsComponent } from './components/accessibility-controls/accessibility-controls.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { AppSettingsService } from './services/app-settings.service';
 
 @Component({
@@ -16,7 +17,8 @@ import { AppSettingsService } from './services/app-settings.service';
     MegaMenuComponent,
     LiveChatComponent,
     LanguageSelectorComponent,
-    AccessibilityControlsComponent
+    AccessibilityControlsComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

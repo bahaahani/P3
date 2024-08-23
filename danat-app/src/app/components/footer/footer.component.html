@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>DANAT</h3>
+      <p>Bahrain Institute for Pearls and Gemstones</p>
+      <p>Manama, Bahrain</p>
+      <p>Phone: +973 1711 0000</p>
+      <p>Email: infodanat.bh</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li *ngFor="let link of footerLinks">
+          <a [routerLink]="link.url">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} DANAT. All rights reserved.</p>
+  </div>
+</footer>

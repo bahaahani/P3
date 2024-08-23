@@ -1,0 +1,39 @@
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <div class="contact-content">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>We'd love to hear from you. Please feel free to contact us with any questions or inquiries.</p>
+      <ul>
+        <li><strong>Address:</strong> DANAT Institute, Manama, Bahrain</li>
+        <li><strong>Phone:</strong> +973 1711 0000</li>
+        <li><strong>Email:</strong> infodanat.bh</li>
+      </ul>
+      <h3>Office Hours</h3>
+      <p>Sunday - Thursday: 8:00 AM - 4:00 PM</p>
+      <p>Friday - Saturday: Closed</p>
+    </div>
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" formControlName="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" [disabled]="!contactForm.valid">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>

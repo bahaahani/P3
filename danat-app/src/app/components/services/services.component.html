@@ -1,0 +1,35 @@
+<div class="services-container">
+  <h1>Our Services</h1>
+  <p class="intro">DANAT offers a wide range of professional services in gemology, pearl testing, and jewelry appraisal. Our team of experts uses cutting-edge technology to provide accurate and reliable results.</p>
+
+  <div class="services-grid">
+    <div *ngFor="let service of services" class="service-card">
+      <h2>{{ service.name }}</h2>
+      <p>{{ service.description }}</p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li *ngFor="let feature of service.features">{{ feature }}</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+  </div>
+
+  <section class="why-choose-us">
+    <h2>Why Choose DANAT?</h2>
+    <ul>
+      <li>Internationally recognized expertise</li>
+      <li>State-of-the-art technology and facilities</li>
+      <li>Commitment to accuracy and integrity</li>
+      <li>Fast turnaround times</li>
+      <li>Personalized customer service</li>
+    </ul>
+  </section>
+
+  <section class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>To learn more about our services or to schedule an appointment, please contact us:</p>
+    <p>Email: infodanat.bh</p>
+    <p>Phone: +973 1711 0000</p>
+    <a href="/contact" class="cta-button">Contact Us</a>
+  </section>
+</div>

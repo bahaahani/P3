@@ -1,12 +1,73 @@
 .about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
 }
 
 .about-us-container section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
-  color: #333;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  color: var(--secondary-color);
   margin-bottom: 1rem;
+}
+
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mission, .vision {
+  width: 48%;
+}
+
+.team-grid, .partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.team-member, .partner {
+  text-align: center;
+}
+
+.team-member img, .partner img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.press-releases ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.press-releases li {
+  margin-bottom: 1rem;
+}
+
+.press-releases a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.press-releases a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    flex-direction: column;
+  }
+
+  .mission, .vision {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }

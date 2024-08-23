@@ -3,39 +3,48 @@
 
   <section class="course-categories">
     <h2>Course Categories</h2>
-    <ul>
-      <li>Gemology Courses</li>
-      <li>Pearl Diving Courses</li>
-      <li>Jewelry Design Courses</li>
-    </ul>
+    <div class="category-grid">
+      <div *ngFor="let category of courseCategories" class="category-card">
+        <h3>{{ category.name }}</h3>
+        <p>{{ category.description }}</p>
+        <ul>
+          <li *ngFor="let course of category.courses">{{ course }}</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section class="course-details">
-    <h2>Course Details</h2>
-    <ul>
-      <li>Syllabus</li>
-      <li>Instructors</li>
-      <li>Schedule & Fees</li>
-      <li>Registration Process</li>
-      <li>Testimonials</li>
-    </ul>
+  <section class="admission-process">
+    <h2>Admission Process</h2>
+    <ol>
+      <li>Submit online application</li>
+      <li>Provide academic transcripts</li>
+      <li>Complete entrance exam (if required)</li>
+      <li>Attend interview (for selected programs)</li>
+      <li>Receive admission decision</li>
+      <li>Pay tuition and complete enrollment</li>
+    </ol>
   </section>
 
-  <section class="resources">
-    <h2>Resources</h2>
+  <section class="facilities">
+    <h2>Our Facilities</h2>
     <ul>
-      <li>Study Materials</li>
-      <li>Virtual Tours of Facilities</li>
-      <li>Student Portal Access</li>
+      <li *ngFor="let facility of facilities">{{ facility }}</li>
     </ul>
   </section>
 
   <section class="student-life">
     <h2>Student Life</h2>
+    <h3>Events and Activities</h3>
     <ul>
-      <li>Campus Facilities</li>
-      <li>Events & Activities</li>
-      <li>International Student Support</li>
+      <li *ngFor="let event of events">{{ event }}</li>
     </ul>
+    <h3>International Student Support</h3>
+    <p>We offer comprehensive support for international students, including visa assistance, accommodation help, and cultural integration programs.</p>
+  </section>
+
+  <section class="apply-now">
+    <h2>Ready to Start Your Journey?</h2>
+    <a href="/registration" class="cta-button">Apply Now</a>
   </section>
 </div>
