@@ -1,0 +1,31 @@
+.home-container {
+  /* Add styles for the home container */
+  background-color: #f2f2f2;
+  padding: 2rem;
+}
+
+.hero-banner {
+  /* Add styles for the hero banner */
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.quick-links {
+  /* Add styles for quick links section */
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.testimonials {
+  /* Add styles for testimonials section */
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.newsletter-signup {
+  /* Add styles for newsletter signup section */
+  background-color: #fff;
+  padding: 2rem;
+}

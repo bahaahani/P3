@@ -1,0 +1,15 @@
+<div class="dashboard">
+  <h2>Welcome, {{ studentName }}</h2>
+  <section class="enrolled-courses">
+    <h3>Your Courses</h3>
+    <div *ngFor="let course of enrolledCourses" class="course-progress">
+      <h4>{{ course.name }}</h4>
+      <progress [value]="course.progress" max="100"></progress>
+      <span>{{ course.progress }}% complete</span>
+    </div>
+  </section>
+  <section class="recommendations">
+    <h3>Recommended Courses</h3>
+    <!-- Add recommended courses here -->
+  </section>
+</div>

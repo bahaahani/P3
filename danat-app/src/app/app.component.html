@@ -1,21 +1,14 @@
 <header>
-  <nav>
-    <ul>
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-      <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
-      <li><a routerLink="/education" routerLinkActive="active">Education</a></li>
-      <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
-      <li><a routerLink="/research" routerLinkActive="active">Research</a></li>
-      <li><a routerLink="/events" routerLinkActive="active">Events</a></li>
-      <li><a routerLink="/press" routerLinkActive="active">Press</a></li>
-      <li><a routerLink="/contact-us" routerLinkActive="active">Contact Us</a></li>
-    </ul>
-  </nav>
+  <app-language-selector></app-language-selector>
+  <app-accessibility-controls></app-accessibility-controls>
+  <app-mega-menu></app-mega-menu>
 </header>
 
 <main>
   <router-outlet></router-outlet>
 </main>
+
+<app-live-chat></app-live-chat>
 
 <footer>
   <p>&copy; 2023 DANAT. All rights reserved.</p>

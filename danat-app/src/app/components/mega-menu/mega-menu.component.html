@@ -1,0 +1,15 @@
+<nav class="mega-menu">
+  <ul>
+    <li *ngFor="let category of menuItems">
+      <a href="#">{{ category.title }}</a>
+      <div class="submenu">
+        <div class="submenu-column" *ngFor="let item of category.items">
+          <h3>{{ item.name }}</h3>
+          <ul>
+            <li><a [routerLink]="item.link">View Details</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

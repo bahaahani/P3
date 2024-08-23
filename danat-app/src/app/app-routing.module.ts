@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { EducationComponent } from './pages/education/education.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ResearchComponent } from './pages/research/research.component';
