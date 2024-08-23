@@ -1,0 +1,26 @@
+<div class="gallery-container">
+  <h1>DANAT Gallery</h1>
+  <p class="intro">Explore our collection of stunning gemstones, pearls, and jewelry pieces.</p>
+
+  <div class="category-filter">
+    <button *ngFor="let category of categories" 
+            (click)="filterGallery(category)"
+            [class.active]="selectedCategory === category">
+      {{ category | titlecase }}
+    </button>
+  </div>
+
+  <div class="gallery-grid">
+    <div *ngFor="let item of filteredGalleryItems" class="gallery-item">
+      <img [src]="item.imageUrl" [alt]="item.title">
+      <div class="item-info">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="filteredGalleryItems.length === 0" class="no-items">
+    No items found for the selected category.
+  </div>
+</div>

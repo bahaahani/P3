@@ -1,36 +1,84 @@
-.registration-form {
-  max-width: 500px;
+.registration-container {
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-div {
-  margin-bottom: 1rem;
+.intro {
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+.registration-form {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-input, select {
+input, select, textarea {
   width: 100%;
   padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
+textarea {
+  resize: vertical;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.checkbox label {
+  margin-bottom: 0;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
   color: white;
   border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-button:disabled {
-  background-color: #cccccc;
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .registration-form {
+    padding: 1rem;
+  }
 }

@@ -1,35 +1,54 @@
-<div class="registration-form">
-  <h2>Course Registration</h2>
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Name:</label>
-      <input id="name" type="text" formControlName="name">
+<div class="registration-container">
+  <h1>Course Registration</h1>
+  <p class="intro">Ready to start your journey with DANAT? Fill out the form below to register for one of our programs.</p>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" required>
     </div>
-    <div>
-      <label for="email">Email:</label>
-      <input id="email" type="email" formControlName="email">
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" required>
     </div>
-    <div>
-      <label for="nationality">Nationality:</label>
-      <input id="nationality" type="text" formControlName="nationality">
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required>
     </div>
-    <div>
-      <label>
-        <input type="radio" formControlName="isBahrainiNational" [value]="true"> Bahraini National
-      </label>
-      <label>
-        <input type="radio" formControlName="isBahrainiNational" [value]="false"> Non-Bahraini
-      </label>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" formControlName="phone" required>
     </div>
-    <div>
-      <label for="course">Course:</label>
-      <select id="course" formControlName="course">
-        <option value="">Select a course</option>
-        <option value="gemology">Introduction to Gemology</option>
-        <option value="pearl-diving">Pearl Diving Certification</option>
-        <option value="jewelry-design">Jewelry Design Fundamentals</option>
+
+    <div class="form-group">
+      <label for="nationality">Nationality</label>
+      <select id="nationality" formControlName="nationality" required>
+        <option value="">Select a nationality</option>
+        <option *ngFor="let nationality of nationalities" [value]="nationality">{{ nationality }}</option>
       </select>
     </div>
-    <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+
+    <div class="form-group checkbox">
+      <input type="checkbox" id="isBahraini" formControlName="isBahraini">
+      <label for="isBahraini">I am a Bahraini citizen</label>
+    </div>
+
+    <div class="form-group">
+      <label for="program">Program</label>
+      <select id="program" formControlName="program" required>
+        <option value="">Select a program</option>
+        <option *ngFor="let program of programs" [value]="program">{{ program }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Additional Message (Optional)</label>
+      <textarea id="message" formControlName="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="!registrationForm.valid" class="submit-button">Register</button>
   </form>
 </div>

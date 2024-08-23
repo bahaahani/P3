@@ -1,15 +1,33 @@
 <div class="dashboard">
-  <h2>Welcome, {{ studentName }}</h2>
+  <h1>Welcome, {{ studentName }}</h1>
   <section class="enrolled-courses">
-    <h3>Your Courses</h3>
-    <div *ngFor="let course of enrolledCourses" class="course-progress">
-      <h4>{{ course.name }}</h4>
-      <progress [value]="course.progress" max="100"></progress>
-      <span>{{ course.progress }}% complete</span>
+    <h2>Your Courses</h2>
+    <div class="course-grid">
+      <div *ngFor="let course of enrolledCourses" class="course-card">
+        <h3>{{ course.name }}</h3>
+        <div class="progress-bar">
+          <div class="progress" [style.width.%]="course.progress"></div>
+        </div>
+        <p>{{ course.progress }}% complete</p>
+        <a href="#" class="button">Continue Course</a>
+      </div>
     </div>
   </section>
-  <section class="recommendations">
-    <h3>Recommended Courses</h3>
-    <!-- Add recommended courses here -->
+
+  <section class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li *ngFor="let event of upcomingEvents">{{ event }}</li>
+    </ul>
+  </section>
+
+  <section class="quick-links">
+    <h2>Quick Links</h2>
+    <div class="button-grid">
+      <a href="#" class="button">Course Catalog</a>
+      <a href="#" class="button">Academic Calendar</a>
+      <a href="#" class="button">Student Resources</a>
+      <a href="#" class="button">Contact Instructor</a>
+    </div>
   </section>
 </div>
