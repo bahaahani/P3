@@ -1,5 +1,7 @@
 Here's a breakdown of the tasks associated with the proposed site map and features for DANAT, organized into specific responsibilities that can be assigned to different developers or teams:
 
+i am using danat-app, use angular 17, the code lies in danat/src/app be mindful to seperate html css and ts seperately, 
+
 1. Home Page
 Hero Banner Implementation:
 Design & UI Developer: Create and design the hero banner layout.

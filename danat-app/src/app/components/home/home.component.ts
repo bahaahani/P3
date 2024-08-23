@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MegaMenuComponent } from '../mega-menu/mega-menu.component';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { AccessibilityControlsComponent } from '../accessibility-controls/accessibility-controls.component';
 import { LiveChatComponent } from '../live-chat/live-chat.component';
-
+import { LoadingIndicatorComponent } from '../loading-indicator/loading-indicator.component';
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, RouterModule, MegaMenuComponent, LanguageSelectorComponent, AccessibilityControlsComponent, LiveChatComponent],
+    imports: [CommonModule, RouterModule, MegaMenuComponent, LanguageSelectorComponent, AccessibilityControlsComponent, LiveChatComponent, LoadingIndicatorComponent],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+    isLoading = true;
     featuredCourses = [
         {
             title: 'Introduction to Gemology',
@@ -92,4 +93,12 @@ export class HomeComponent {
         { name: 'World Jewellery Confederation (CIBJO)', logo: 'assets/images/partners/cibjo-logo.png' },
         { name: 'Responsible Jewellery Council (RJC)', logo: 'assets/images/partners/rjc-logo.png' }
     ];
+
+    ngOnInit() {
+        // Simulate loading process
+        setTimeout(() => {
+            this.isLoading = false;
+            console.log('Loading complete'); // Add this line for debugging
+        }, 2000); // Show loading for 2 seconds
+    }
 }
