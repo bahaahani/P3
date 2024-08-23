@@ -6,4 +6,49 @@
 
 h1 {
   color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.press-releases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.press-release-card {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.press-release-card h2 {
+  color: #337ab7;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.release-date {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.release-summary {
+  margin-bottom: 15px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #337ab7;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #23527c;
 }

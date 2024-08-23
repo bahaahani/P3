@@ -1,10 +1,11 @@
 <div class="press-container">
   <h1>Press Releases</h1>
   <section class="press-releases">
-    <ul>
-      <li>Press Release 1</li>
-      <li>Press Release 2</li>
-      <li>Press Release 3</li>
-    </ul>
+    <div *ngFor="let release of pressReleases" class="press-release-card">
+      <h2>{{ release.title }}</h2>
+      <p class="release-date">{{ release.date | date:'mediumDate' }}</p>
+      <p class="release-summary">{{ release.summary }}</p>
+      <a [href]="release.link" target="_blank" class="read-more-btn">Read More</a>
+    </div>
   </section>
 </div>
