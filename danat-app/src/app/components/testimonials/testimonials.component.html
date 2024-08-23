@@ -1,0 +1,13 @@
+<div class="testimonials-container">
+  <h2>What People Say About Us</h2>
+  <div class="testimonials-grid">
+    <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+      <img [src]="testimonial.imageUrl" [alt]="testimonial.name" class="testimonial-image">
+      <div class="testimonial-content">
+        <p class="quote">"{{ testimonial.quote }}"</p>
+        <p class="author">{{ testimonial.name }}</p>
+        <p class="role">{{ testimonial.role }}{{ testimonial.company ? ', ' + testimonial.company : '' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

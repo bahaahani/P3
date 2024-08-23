@@ -26,4 +26,61 @@ h1 {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   cursor: pointer;
- 
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.category-filter button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-info {
+  padding: 1rem;
+}
+
+.item-info h3 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.no-items {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .category-filter {
+    flex-wrap: wrap;
+  }
+
+  .category-filter button {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="faq-container">
+  <h1>Frequently Asked Questions</h1>
+  <p class="intro">Find answers to common questions about DANAT's services, programs, and processes.</p>
+
+  <div class="faq-list">
+    <div *ngFor="let item of faqItems; let i = index" class="faq-item">
+      <div class="faq-question" (click)="toggleExpand(i)">
+        <h3>{{ item.question }}</h3>
+        <span class="toggle-icon">{{ expandedIndex === i ? '−' : '+' }}</span>
+      </div>
+      <div class="faq-answer" [class.expanded]="expandedIndex === i">
+        <p>{{ item.answer }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <p>Can't find the answer you're looking for? Contact our support team:</p>
+    <a href="/contact" class="cta-button">Contact Us</a>
+  </div>
+</div>
