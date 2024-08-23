@@ -1,91 +1,132 @@
 <div class="home-container">
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Discover the World of Gems with DANAT</h1>
-      <p>
+  <section class="hero bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
+    <div class="hero-content container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover the World of Gems with DANAT</h1>
+      <p class="text-xl mb-8">
         Unlock your potential in gemology, pearl grading, and jewelry design
       </p>
-      <a routerLink="/courses" class="cta-button">Explore Our Courses</a>
+      <a routerLink="/courses" class="bg-white text-red-600 py-3 px-6 rounded-full font-semibold hover:bg-red-100 transition duration-300">Explore Our Courses</a>
     </div>
   </section>
 
-  <section class="featured-courses">
-    <h2>Featured Courses</h2>
-    <div class="course-grid">
-      <div *ngFor="let course of featuredCourses" class="course-card">
-        <img [src]="course.image" [alt]="course.title" />
-        <h3>{{ course.title }}</h3>
-        <p>{{ course.description }}</p>
-        <a [routerLink]="course.link" class="button">Learn More</a>
+  <section class="featured-courses py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Featured Courses</h2>
+      <div class="course-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let course of featuredCourses" class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img [src]="course.image" [alt]="course.title" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">{{ course.title }}</h3>
+            <p class="text-gray-600 mb-4">{{ course.description }}</p>
+            <a [routerLink]="course.link" class="inline-block bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300">Learn More</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <h2>What Our Students Say</h2>
-    <div class="testimonial-grid">
-      <div *ngFor="let testimonial of testimonials" class="testimonial-card">
-        <p>"{{ testimonial.text }}"</p>
-        <cite>- {{ testimonial.name }}, {{ testimonial.role }}</cite>
+  <section class="testimonials py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">What Our Students Say</h2>
+      <div class="testimonial-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let testimonial of testimonials" class="testimonial-card bg-gray-100 p-6 rounded-lg">
+          <p class="text-gray-800 mb-4">"{{ testimonial.text }}"</p>
+          <cite class="block text-right text-gray-600">- {{ testimonial.name }}, {{ testimonial.role }}</cite>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="latest-news">
-    <h2>Latest News</h2>
-    <div class="news-grid">
-      <div *ngFor="let news of latestNews" class="news-card">
-        <h3>{{ news.title }}</h3>
-        <p class="news-date">{{ news.date | date : "mediumDate" }}</p>
-        <p>{{ news.summary }}</p>
-        <a [routerLink]="news.link" class="read-more">Read More</a>
+  <section class="latest-news py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Latest News</h2>
+      <div class="news-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let news of latestNews" class="news-card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">{{ news.title }}</h3>
+          <p class="text-gray-500 mb-2">{{ news.date | date : "mediumDate" }}</p>
+          <p class="text-gray-600 mb-4">{{ news.summary }}</p>
+          <a [routerLink]="news.link" class="text-red-600 hover:text-red-800 font-semibold">Read More</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="partners-affiliations">
-    <h2>Our Partners and Affiliations</h2>
-    <div class="partners-grid">
-      <div *ngFor="let partner of partners" class="partner-card">
-        <img
-          [src]="partner.logo"
-          [alt]="partner.name + ' logo'"
-          class="partner-logo"
-        />
-        <p>{{ partner.name }}</p>
+  <section class="partners-affiliations py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Partners and Affiliations</h2>
+      <div class="partners-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div *ngFor="let partner of partners" class="partner-card flex flex-col items-center">
+          <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="w-24 h-24 object-contain mb-2" />
+          <p class="text-center text-gray-600">{{ partner.name }}</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="latest-research">
-    <h2>Latest Research</h2>
-    <div class="research-grid">
-      <div *ngFor="let research of latestResearch" class="research-card">
-        <h3>{{ research.title }}</h3>
-        <p class="authors">{{ research.authors }}</p>
-        <p class="date">{{ research.date | date : "mediumDate" }}</p>
-        <p class="summary">{{ research.summary }}</p>
-        <a [routerLink]="research.link" class="read-more">Read Full Paper</a>
+  <section class="latest-research py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Latest Research</h2>
+      <div class="research-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let research of latestResearch" class="research-card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">{{ research.title }}</h3>
+          <p class="text-gray-600 mb-1">{{ research.authors }}</p>
+          <p class="text-gray-500 mb-2">{{ research.date | date : "mediumDate" }}</p>
+          <p class="text-gray-600 mb-4">{{ research.summary }}</p>
+          <a [routerLink]="research.link" class="text-red-600 hover:text-red-800 font-semibold">Read Full Paper</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about-us">
-    <div class="about-content">
-      <h2>About DANAT</h2>
-      <p>
-        DANAT is a world-class institute dedicated to the study and appreciation
-        of pearls and gemstones. Our expert instructors and state-of-the-art
-        facilities provide unparalleled education in gemology.
-      </p>
-      <a routerLink="/about" class="button">Learn More About Us</a>
+  <section class="upcoming-events py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
+      <div class="events-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let event of upcomingEvents" class="event-card bg-gray-100 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">{{ event.title }}</h3>
+          <p class="text-gray-500 mb-2">{{ event.date | date : "fullDate" }}</p>
+          <p class="text-gray-600 mb-4">{{ event.description }}</p>
+          <a [routerLink]="event.link" class="inline-block bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2>Ready to Get in Touch?</h2>
-    <p>Have questions or want to learn more about our programs?</p>
-    <a routerLink="/contact-us" class="cta-button">Contact Us</a>
+  <section class="facilities py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our World-Class Facilities</h2>
+      <div class="facilities-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let facility of facilities" class="facility-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img [src]="facility.image" [alt]="facility.name" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">{{ facility.name }}</h3>
+            <p class="text-gray-600 mb-4">{{ facility.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="about-content max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">About DANAT</h2>
+        <p class="text-gray-600 mb-6">
+          DANAT is a world-class institute dedicated to the study and appreciation
+          of pearls and gemstones. Our expert instructors and state-of-the-art
+          facilities provide unparalleled education in gemology.
+        </p>
+        <a routerLink="/about" class="inline-block bg-red-600 text-white py-2 px-6 rounded-full hover:bg-red-700 transition duration-300">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bg-gradient-to-r from-red-600 to-red-800 text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get in Touch?</h2>
+      <p class="text-xl mb-6">Have questions or want to learn more about our programs?</p>
+      <a routerLink="/contact-us" class="bg-white text-red-600 py-3 px-8 rounded-full font-semibold hover:bg-red-100 transition duration-300">Contact Us</a>
+    </div>
   </section>
 </div>
 

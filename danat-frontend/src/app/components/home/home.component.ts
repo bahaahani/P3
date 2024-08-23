@@ -6,6 +6,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
 import { AccessibilityControlsComponent } from '../accessibility-controls/accessibility-controls.component';
 import { LiveChatComponent } from '../live-chat/live-chat.component';
 import { LoadingIndicatorComponent } from '../loading-indicator/loading-indicator.component';
+
 @Component({
     selector: 'app-home',
     standalone: true,
@@ -92,6 +93,45 @@ export class HomeComponent implements OnInit {
         { name: 'International Gemological Institute (IGI)', logo: 'assets/images/partners/igi-logo.png' },
         { name: 'World Jewellery Confederation (CIBJO)', logo: 'assets/images/partners/cibjo-logo.png' },
         { name: 'Responsible Jewellery Council (RJC)', logo: 'assets/images/partners/rjc-logo.png' }
+    ];
+
+    upcomingEvents = [
+        {
+            title: 'Annual Gemology Conference',
+            date: '2023-09-15',
+            description: 'Join us for our annual conference featuring renowned speakers from the gemology industry.',
+            link: '/events/annual-gemology-conference'
+        },
+        {
+            title: 'Pearl Grading Workshop',
+            date: '2023-07-20',
+            description: 'A hands-on workshop to master the art of pearl grading and valuation.',
+            link: '/events/pearl-grading-workshop'
+        },
+        {
+            title: 'Jewelry Design Competition',
+            date: '2023-08-10',
+            description: 'Showcase your creativity in our annual jewelry design competition.',
+            link: '/events/jewelry-design-competition'
+        }
+    ];
+
+    facilities = [
+        {
+            name: 'State-of-the-Art Gemology Lab',
+            description: 'Our advanced lab is equipped with the latest technology for gemstone analysis and grading.',
+            image: 'assets/images/facilities/gemology-lab.jpg'
+        },
+        {
+            name: 'Pearl Testing Center',
+            description: 'A specialized facility dedicated to the study and authentication of natural and cultured pearls.',
+            image: 'assets/images/facilities/pearl-testing-center.jpg'
+        },
+        {
+            name: 'Jewelry Design Studio',
+            description: 'A creative space with modern tools and software for aspiring jewelry designers.',
+            image: 'assets/images/facilities/jewelry-design-studio.jpg'
+        }
     ];
 
     ngOnInit() {

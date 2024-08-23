@@ -1,15 +1,24 @@
-<header>
-  <app-mega-menu></app-mega-menu>
+<header class="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-md">
+  <div class="container mx-auto px-4 py-2">
+    <app-mega-menu></app-mega-menu>
+  </div>
 </header>
-<div class="loading-wrapper" *ngIf="isLoading">
+
+<div
+  class="loading-wrapper fixed inset-0 flex justify-center items-center bg-white bg-opacity-80 z-50"
+  *ngIf="isLoading"
+>
   <app-loading-indicator></app-loading-indicator>
 </div>
-<main>
+
+<main class="container mx-auto px-4 py-8 min-h-screen">
   <router-outlet></router-outlet>
 </main>
 
-<footer>
-  <app-footer></app-footer>
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4">
+    <app-footer></app-footer>
+  </div>
 </footer>
 
-<app-live-chat></app-live-chat>
+<app-live-chat class="fixed bottom-6 right-6 z-40"></app-live-chat>
