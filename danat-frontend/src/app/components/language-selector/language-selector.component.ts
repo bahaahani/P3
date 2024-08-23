@@ -7,10 +7,12 @@ import { AppSettingsService } from '../../services/app-settings.service';
     standalone: true,
     imports: [CommonModule],
     template: `
-    <select (change)="changeLanguage($event)" [value]="currentLanguage">
-      <option value="en">English</option>
-      <option value="ar">العربية</option>
-    </select>
+    <div class="flex items-center">
+      <span class="text-sm font-medium mr-2">Language:</span>
+      <select (change)="changeLanguage($event)" [value]="selectedLanguage">
+        <option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</option>
+      </select>
+    </div>
   `,
     styles: [`
     select {
@@ -23,11 +25,17 @@ import { AppSettingsService } from '../../services/app-settings.service';
   `]
 })
 export class LanguageSelectorComponent {
-    currentLanguage: string = 'en';
+    languages = [
+      { code: 'en', name: 'English' },
+      { code: 'ar', name: 'العربية' },
+      { code: 'fr', name: 'Français' }
+    ];
+
+    selectedLanguage = 'en';
 
     constructor(private appSettings: AppSettingsService) {
         this.appSettings.language$.subscribe(lang => {
-            this.currentLanguage = lang;
+            this.selectedLanguage = lang;
         });
     }
 

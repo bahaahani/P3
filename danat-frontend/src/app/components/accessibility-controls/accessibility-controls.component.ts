@@ -10,16 +10,20 @@ import { AppSettingsService } from '../../services/app-settings.service';
   styleUrls: ['./accessibility-controls.component.css']
 })
 export class AccessibilityControlsComponent {
+  fontSize: number = 16;
 
+  increaseFontSize() {
+    this.fontSize += 2;
+    document.body.style.fontSize = `${this.fontSize}px`;
+  }
 
-  constructor(private appSettings: AppSettingsService) { }
-
-  changeFontSize(direction: 'increase' | 'decrease') {
-    this.appSettings.changeFontSize(direction);
+  decreaseFontSize() {
+    this.fontSize -= 2;
+    document.body.style.fontSize = `${this.fontSize}px`;
   }
 
   toggleHighContrast() {
-    this.appSettings.toggleHighContrast();
+    document.body.classList.toggle('high-contrast');
   }
 
   toggleDyslexicFont() {

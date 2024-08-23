@@ -1,16 +1,8 @@
-<div class="accessibility-controls">
-  <button (click)="changeFontSize('increase')" aria-label="Increase font size">
-    A+
-  </button>
-  <button (click)="changeFontSize('decrease')" aria-label="Decrease font size">
-    A-
-  </button>
-  <button
-    (click)="toggleHighContrast()"
-    aria-label="Toggle high contrast mode"
-  ></button>
-  <button
-    (click)="toggleDyslexicFont()"
-    aria-label="Toggle dyslexic-friendly font"
-  ></button>
+<div class="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-md">
+  <h2 class="text-lg font-semibold mb-2">Accessibility Controls</h2>
+  <div class="flex space-x-2">
+    <button (click)="increaseFontSize()" class="bg-blue-500 text-white px-2 py-1 rounded">A+</button>
+    <button (click)="decreaseFontSize()" class="bg-blue-500 text-white px-2 py-1 rounded">A-</button>
+    <button (click)="toggleHighContrast()" class="bg-gray-800 text-white px-2 py-1 rounded">High Contrast</button>
+  </div>
 </div>
