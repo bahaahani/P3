@@ -7,7 +7,7 @@ import { AccessibilityControlsComponent } from '../accessibility-controls/access
 @Component({
     selector: 'app-mega-menu',
     standalone: true,
-    imports: [CommonModule, RouterModule, LanguageSelectorComponent, AccessibilityControlsComponent],
+    imports: [CommonModule, RouterModule, LanguageSelectorComponent],
     templateUrl: './mega-menu.component.html',
     styleUrls: ['./mega-menu.component.css']
 })

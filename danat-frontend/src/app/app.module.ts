@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
     imports: [
         BrowserModule,
         RouterModule.forRoot([]),
-        // Removed the import for AppRoutingModule due to the error
     ],
     providers: [],
     bootstrap: []

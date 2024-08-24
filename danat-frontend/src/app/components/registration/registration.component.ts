@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  registrationForm: FormGroup;
+  registrationForm!: FormGroup;
   loading = false;
   submitted = false;
   error = '';
@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
     this.authService.register(this.registrationForm.value)
       .subscribe(
         data => {
-          this.router.navigate(['/login'], { queryParams: { registered: true }});
+          this.router.navigate(['/login'], { queryParams: { registered: true } });
         },
         error => {
           this.error = error;
@@ -57,7 +57,7 @@ export class RegistrationComponent implements OnInit {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
         return;
       }
 

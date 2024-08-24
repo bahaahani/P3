@@ -10,7 +10,7 @@ import { LoadingIndicatorComponent } from '../loading-indicator/loading-indicato
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, RouterModule, MegaMenuComponent, LanguageSelectorComponent, AccessibilityControlsComponent, LiveChatComponent, LoadingIndicatorComponent],
+    imports: [CommonModule, RouterModule, MegaMenuComponent, LanguageSelectorComponent, LiveChatComponent, LoadingIndicatorComponent],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })

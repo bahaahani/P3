@@ -4,10 +4,12 @@ import { CourseProgressService } from '../../services/course-progress.service';
 @Component({
   selector: 'app-course-progress',
   templateUrl: './course-progress.component.html',
-  styleUrls: ['./course-progress.component.css']
+  styleUrls: ['./course-progress.component.css'],
+  standalone: true,
+  imports: []
 })
 export class CourseProgressComponent implements OnInit {
-  @Input() courseId: string;
+  @Input() courseId!: string;
   progress: number = 0;
   milestones: any[] = [];
 
@@ -20,7 +22,7 @@ export class CourseProgressComponent implements OnInit {
   loadCourseProgress() {
     this.courseProgressService.getUserCourseProgress().subscribe(
       (data) => {
-        const courseProgress = data.find(course => course.id === this.courseId);
+        const courseProgress = data.find((course: any) => course.id === this.courseId);
         if (courseProgress) {
           this.progress = courseProgress.progress;
           this.milestones = courseProgress.milestones;

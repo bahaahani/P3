@@ -11,7 +11,7 @@ export class AuthService {
   public currentUser: Observable<any>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') ?? ''));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -22,15 +22,19 @@ export class AuthService {
   login(username: string, password: string) {
     return this.http.post<any>(`/api/login`, { username, password })
       .pipe(map(user => {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        if (user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        } else {
+          this.currentUserSubject.next({});
+        }
         return user;
       }));
   }
 
   logout() {
     localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
+    this.currentUserSubject.next({});
   }
 
   register(user: any) {
@@ -40,8 +44,12 @@ export class AuthService {
   googleLogin(token: string) {
     return this.http.post<any>(`/api/google-login`, { token })
       .pipe(map(user => {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        if (user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        } else {
+          this.currentUserSubject.next({});
+        }
         return user;
       }));
   }

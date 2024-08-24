@@ -4,12 +4,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-course-catalog',
   templateUrl: './course-catalog.component.html',
-  styleUrls: ['./course-catalog.component.css']
+  styleUrls: ['./course-catalog.component.css'],
+  standalone: true,
 })
 export class CourseCatalogComponent implements OnInit {
   courses: any[] = []; // This would typically come from a service
   filteredCourses: any[] = [];
-  searchForm: FormGroup;
+  searchForm!: FormGroup;
   categories: string[] = ['Gemology', 'Pearl Diving', 'Jewelry Design', 'Research'];
 
   constructor(private formBuilder: FormBuilder) { }
