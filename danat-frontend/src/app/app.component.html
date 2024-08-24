@@ -1,4 +1,6 @@
-<header class="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-md">
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<header class="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-md" role="banner">
   <div class="container mx-auto px-4 py-2">
     <app-mega-menu></app-mega-menu>
   </div>
@@ -7,14 +9,18 @@
 <div
   class="loading-wrapper fixed inset-0 flex justify-center items-center bg-white bg-opacity-80 z-50"
   *ngIf="isLoading"
+  role="status"
+  aria-live="polite"
 >
   <app-loading-indicator></app-loading-indicator>
 </div>
 
-<main class="container mx-auto px-4 py-8 min-h-screen">
+<main class="container mx-auto px-4 py-8 min-h-screen" role="main" id="main-content">
   <router-outlet></router-outlet>
 </main>
 
-<app-footer></app-footer>
+<app-footer role="contentinfo"></app-footer>
 
-<app-live-chat class="fixed bottom-6 right-6 z-40"></app-live-chat>
+<app-live-chat class="fixed bottom-6 right-6 z-40" role="complementary"></app-live-chat>
+
+<app-accessibility-controls role="region" aria-label="Accessibility Controls"></app-accessibility-controls>

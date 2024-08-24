@@ -4,7 +4,8 @@ import { AccessibilityService } from '../../services/accessibility.service';
 @Component({
   selector: 'app-accessibility-controls',
   templateUrl: './accessibility-controls.component.html',
-  styleUrls: ['./accessibility-controls.component.css']
+  styleUrls: ['./accessibility-controls.component.css'],
+  standalone: true,
 })
 export class AccessibilityControlsComponent implements OnInit {
   fontSize!: string;

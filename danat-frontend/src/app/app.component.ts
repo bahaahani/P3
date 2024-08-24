@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MegaMenuComponent,
     LiveChatComponent,
     LanguageSelectorComponent,
+    AccessibilityControlsComponent,
     LoadingIndicatorComponent,
     FooterComponent
   ],

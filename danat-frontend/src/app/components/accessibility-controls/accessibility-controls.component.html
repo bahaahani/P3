@@ -2,11 +2,7 @@
   <h2>Accessibility Settings</h2>
   <div class="font-size-controls">
     <label for="font-size">Font Size:</label>
-    <select
-      id="font-size"
-      (change)="changeFontSize($event.target.value)"
-      [value]="fontSize"
-    >
+    <select id="font-size" [value]="fontSize">
       <option value="small">Small</option>
       <option value="medium">Medium</option>
       <option value="large">Large</option>
