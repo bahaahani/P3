@@ -1,26 +1,58 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-course-catalog',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './course-catalog.component.html',
   styleUrls: ['./course-catalog.component.css']
 })
 export class CourseCatalogComponent implements OnInit {
-  searchTerm: string = '';
-  courses = [
-    { name: 'Introduction to Gemology', category: 'gemology' },
-    { name: 'Pearl Diving Certification', category: 'pearl-diving' },
-    { name: 'Jewelry Design Fundamentals', category: 'jewelry-design' }
-  ];
+  courses: any[] = []; // This would typically come from a service
+  filteredCourses: any[] = [];
+  searchForm: FormGroup;
+  categories: string[] = ['Gemology', 'Pearl Diving', 'Jewelry Design', 'Research'];
 
-  get filteredCourses() {
-    return this.courses.filter(course => 
-      course.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      course.category.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.searchForm = this.formBuilder.group({
+      searchTerm: [''],
+      category: [''],
+      minPrice: [''],
+      maxPrice: [''],
+      minDuration: [''],
+      maxDuration: [''],
+      minRating: ['']
+    });
+
+    // Mock data - replace with actual API call
+    this.courses = [
+      { id: 1, title: 'Introduction to Gemology', category: 'Gemology', price: 500, duration: 30, rating: 4.5 },
+      { id: 2, title: 'Advanced Pearl Diving', category: 'Pearl Diving', price: 800, duration: 60, rating: 4.8 },
+      { id: 3, title: 'Jewelry Design Basics', category: 'Jewelry Design', price: 600, duration: 45, rating: 4.2 },
+      // Add more courses...
+    ];
+
+    this.filteredCourses = this.courses;
+
+    this.searchForm.valueChanges.subscribe(() => {
+      this.filterCourses();
+    });
+  }
+
+  filterCourses(): void {
+    const { searchTerm, category, minPrice, maxPrice, minDuration, maxDuration, minRating } = this.searchForm.value;
+
+    this.filteredCourses = this.courses.filter(course => {
+      return (
+        course.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (category === '' || course.category === category) &&
+        (minPrice === '' || course.price >= minPrice) &&
+        (maxPrice === '' || course.price <= maxPrice) &&
+        (minDuration === '' || course.duration >= minDuration) &&
+        (maxDuration === '' || course.duration <= maxDuration) &&
+        (minRating === '' || course.rating >= minRating)
+      );
+    });
   }
 }

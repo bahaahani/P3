@@ -1,60 +1,71 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
-  programs = [
-    'Gemology Courses',
-    'Pearl Diving Courses',
-    'Jewelry Design Courses',
-    'Research Programs'
-  ];
-  nationalities = [
-    'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Antiguan', 'Argentine', 'Armenian', 'Australian',
-    'Austrian', 'Azerbaijani', 'Bahamian', 'Bahraini', 'Bangladeshi', 'Barbadian', 'Belarusian', 'Belgian', 'Belizean', 'Beninese',
-    // ... add more nationalities here
-    'Zambian', 'Zimbabwean'
-  ];
+  loading = false;
+  submitted = false;
+  error = '';
 
   constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute
-  ) {
-    this.registrationForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      nationality: ['', Validators.required],
-      isBahraini: [false],
-      program: ['', Validators.required],
-      message: ['']
-    });
-  }
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if (params['program']) {
-        this.registrationForm.patchValue({ program: params['program'] });
-      }
+    this.registrationForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: this.mustMatch('password', 'confirmPassword')
     });
   }
 
+  get f() { return this.registrationForm.controls; }
+
   onSubmit() {
-    if (this.registrationForm.valid) {
-      console.log(this.registrationForm.value);
-      // Here you would typically send the form data to a backend service
-      alert('Thank you for your registration. We will contact you soon!');
-      this.registrationForm.reset();
+    this.submitted = true;
+
+    if (this.registrationForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authService.register(this.registrationForm.value)
+      .subscribe(
+        data => {
+          this.router.navigate(['/login'], { queryParams: { registered: true }});
+        },
+        error => {
+          this.error = error;
+          this.loading = false;
+        });
+  }
+
+  mustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+        return;
+      }
+
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ mustMatch: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
     }
   }
 }

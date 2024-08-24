@@ -1,0 +1,144 @@
+<div class="admin-dashboard">
+  <h2>Admin Dashboard</h2>
+
+  <div *ngIf="loading" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div class="statistics">
+    <h3>Statistics</h3>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Users</h5>
+            <p class="card-text">{{ statistics.totalUsers }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Courses</h5>
+            <p class="card-text">{{ statistics.totalCourses }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Revenue</h5>
+            <p class="card-text">{{ statistics.totalRevenue | currency }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Active Enrollments</h5>
+            <p class="card-text">{{ statistics.activeEnrollments }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses">
+    <h3>Courses</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Instructor</th>
+          <th>Enrollment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{ course.title }}</td>
+          <td>{{ course.instructor }}</td>
+          <td>{{ course.enrollment }}</td>
+          <td>
+            <button
+              class="btn btn-sm btn-primary mr-2"
+              (click)="updateCourse(course.id, course)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="deleteCourse(course.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success" (click)="createCourse({})">
+      Add New Course
+    </button>
+  </div>
+
+  <div class="users">
+    <h3>Users</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.status }}</td>
+          <td>
+            <select (change)="updateUserStatus(user.id, $event.target.value)">
+              <option value="active" [selected]="user.status === 'active'">
+                Active
+              </option>
+              <option value="inactive" [selected]="user.status === 'inactive'">
+                Inactive
+              </option>
+              <option
+                value="suspended"
+                [selected]="user.status === 'suspended'"
+              >
+                Suspended
+              </option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="payments">
+    <h3>Recent Payments</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Course</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>{{ payment.user }}</td>
+          <td>{{ payment.course }}</td>
+          <td>{{ payment.amount | currency }}</td>
+          <td>{{ payment.date | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

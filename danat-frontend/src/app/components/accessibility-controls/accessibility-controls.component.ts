@@ -1,37 +1,27 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AppSettingsService } from '../../services/app-settings.service';
+import { Component, OnInit } from '@angular/core';
+import { AccessibilityService } from '../../services/accessibility.service';
 
 @Component({
   selector: 'app-accessibility-controls',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './accessibility-controls.component.html',
   styleUrls: ['./accessibility-controls.component.css']
 })
-export class AccessibilityControlsComponent {
-  fontSize: number = 16;
+export class AccessibilityControlsComponent implements OnInit {
+  fontSize!: string;
+  highContrast!: boolean;
 
-  increaseFontSize() {
-    this.fontSize += 2;
-    document.body.style.fontSize = `${this.fontSize}px`;
-  }
-  decreaseFontSize() {
-    this.fontSize -= 2;
-    document.body.style.fontSize = `${this.fontSize}px`;
-  }
+  constructor(private accessibilityService: AccessibilityService) { }
 
-  constructor(private appSettings: AppSettingsService) { }
-
-  changeFontSize(direction: 'increase' | 'decrease') {
-    this.appSettings.changeFontSize(direction);
+  ngOnInit(): void {
+    this.accessibilityService.fontSize$.subscribe(size => this.fontSize = size);
+    this.accessibilityService.highContrast$.subscribe(enabled => this.highContrast = enabled);
   }
 
-  toggleHighContrast() {
-    document.body.classList.toggle('high-contrast');
+  changeFontSize(size: string): void {
+    this.accessibilityService.setFontSize(size);
   }
 
-  toggleDyslexicFont() {
-    this.appSettings.toggleDyslexicFont();
+  toggleHighContrast(): void {
+    this.accessibilityService.setHighContrast(!this.highContrast);
   }
 }

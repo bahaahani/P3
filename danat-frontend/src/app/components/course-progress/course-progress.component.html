@@ -1,0 +1,14 @@
+<div class="course-progress">
+  <h3>Course Progress</h3>
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="progress"></div>
+  </div>
+  <p>{{ progress }}% completed</p>
+  <h4>Milestones</h4>
+  <ul class="milestones">
+    <li *ngFor="let milestone of milestones" (click)="updateProgress(milestone)">
+      <input type="checkbox" [checked]="milestone.completed" />
+      {{ milestone.title }}
+    </li>
+  </ul>
+</div>

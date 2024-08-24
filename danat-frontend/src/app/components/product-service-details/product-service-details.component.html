@@ -1,0 +1,16 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold">{{ product.name }}</h1>
+  <p class="text-gray-700">{{ product.description }}</p>
+  
+  <!-- Add other product details here -->
+
+  <app-course-review [courseId]="courseId"></app-course-review>
+
+  <div *ngIf="loading" class="spinner"></div>
+  <div *ngIf="!loading">
+    <div class="share-buttons">
+      <button (click)="share('facebook')" class="btn btn-facebook">Share on Facebook</button>
+      <button (click)="share('twitter')" class="btn btn-twitter">Share on Twitter</button>
+    </div>
+  </div>
+</div>

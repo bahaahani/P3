@@ -1,0 +1,79 @@
+<div class="user-profile">
+  <h2>User Profile</h2>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmitProfile()">
+    <h3>Personal Information</h3>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+    </div>
+    <button type="submit" [disabled]="loading || profileForm.invalid" class="btn btn-primary">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Update Profile
+    </button>
+  </form>
+
+  <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPassword()">
+    <h3>Change Password</h3>
+    <div class="form-group">
+      <label for="currentPassword">Current Password</label>
+      <input type="password" id="currentPassword" formControlName="currentPassword" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword" formControlName="newPassword" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm New Password</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+    </div>
+    <button type="submit" [disabled]="loading || passwordForm.invalid" class="btn btn-primary">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Change Password
+    </button>
+  </form>
+
+  <form [formGroup]="emailPreferencesForm" (ngSubmit)="onSubmitEmailPreferences()">
+    <h3>Email Preferences</h3>
+    <div class="form-check">
+      <input type="checkbox" id="newsletter" formControlName="newsletter" class="form-check-input">
+      <label for="newsletter" class="form-check-label">Receive Newsletter</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="courseUpdates" formControlName="courseUpdates" class="form-check-input">
+      <label for="courseUpdates" class="form-check-label">Receive Course Updates</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="promotions" formControlName="promotions" class="form-check-input">
+      <label for="promotions" class="form-check-label">Receive Promotional Emails</label>
+    </div>
+    <button type="submit" [disabled]="loading" class="btn btn-primary">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Update Email Preferences
+    </button>
+  </form>
+
+  <div class="course-history">
+    <h3>Course History</h3>
+    <ul>
+      <li *ngFor="let course of courseHistory">
+        {{ course.name }} - Completed on {{ course.completionDate | date }}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="success" class="alert alert-success mt-3">
+    Changes saved successfully!
+  </div>
+  <div *ngIf="error" class="alert alert-danger mt-3">
+    {{ error }}
+  </div>
+</div>

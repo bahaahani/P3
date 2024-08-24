@@ -1,16 +1,52 @@
 <div class="course-catalog">
   <h2>Course Catalog</h2>
-  <div class="search-filters">
-    <form>
-      <label for="search">Search:</label>
-      <input id="search" type="search" [(ngModel)]="searchTerm" name="search" placeholder="Search courses">
-    </form>
-  </div>
-  <div class="course-list">
-    <div *ngFor="let course of filteredCourses" class="course-card">
-      <h3>{{ course.name }}</h3>
-      <p>Category: {{ course.category }}</p>
-      <button>View Details</button>
+
+  <form [formGroup]="searchForm" class="search-filters">
+    <div class="form-group">
+      <input type="text" formControlName="searchTerm" placeholder="Search courses" class="form-control">
     </div>
+
+    <div class="form-group">
+      <select formControlName="category" class="form-control">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="number" formControlName="minPrice" placeholder="Min Price" class="form-control">
+      <input type="number" formControlName="maxPrice" placeholder="Max Price" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <input type="number" formControlName="minDuration" placeholder="Min Duration (days)" class="form-control">
+      <input type="number" formControlName="maxDuration" placeholder="Max Duration (days)" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <select formControlName="minRating" class="form-control">
+        <option value="">Min Rating</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+    </div>
+  </form>
+
+  <div class="course-list">
+    <div *ngFor="let course of filteredCourses" class="course-item">
+      <h3>{{ course.title }}</h3>
+      <p>Category: {{ course.category }}</p>
+      <p>Price: ${{ course.price }}</p>
+      <p>Duration: {{ course.duration }} days</p>
+      <p>Rating: {{ course.rating }} / 5</p>
+      <button [routerLink]="['/product-service-details', course.id]" class="btn btn-primary">View Details</button>
+    </div>
+  </div>
+
+  <div *ngIf="filteredCourses.length === 0" class="no-results">
+    No courses found matching your criteria.
   </div>
 </div>

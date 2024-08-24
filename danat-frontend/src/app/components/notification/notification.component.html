@@ -1,0 +1,19 @@
+<div class="notifications">
+  <h3>Notifications</h3>
+  <div *ngIf="notifications.length === 0" class="no-notifications">
+    No new notifications
+  </div>
+  <ul class="notification-list">
+    <li *ngFor="let notification of notifications" [class.unread]="!notification.read">
+      <div class="notification-content">
+        <span class="notification-type">{{ notification.type }}</span>
+        <p>{{ notification.message }}</p>
+        <span class="notification-date">{{ notification.date | date:'short' }}</span>
+      </div>
+      <div class="notification-actions">
+        <button (click)="markAsRead(notification)" *ngIf="!notification.read" class="btn btn-sm btn-primary">Mark as Read</button>
+        <button (click)="deleteNotification(notification)" class="btn btn-sm btn-danger">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
